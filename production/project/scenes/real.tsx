@@ -223,7 +223,7 @@ const C1 = (x: number, y: number, w: number, h: number) => ({ x, y, w, h });
 const PAL = C1(0, 1150, 864, 670);
 const DRAG = C1(0, 640, 864, 1180);
 const DLG = C1(60, 683, 744, 539);
-const SNAP = C1(0, 86, 864, 900);
+const SNAP = C1(0, 200, 500, 720); // the whole drag: floating block (y≈880) up under the hat (y≈300)
 const STACK = C1(0, 200, 440, 200);
 const TYPE = C1(60, 426, 744, 441);
 
@@ -237,8 +237,8 @@ export const LW_GEO: Geo[] = [
   { t: 25.75, crop: DRAG, k: 0.86, cx: 960, cy: 540 },
   { t: 26.0, crop: DLG, k: 1.5, cx: 960, cy: 540 },
   { t: 26.8, crop: DLG, k: 1.5, cx: 960, cy: 540 },
-  { t: 27.05, crop: SNAP, k: 1.1, cx: 960, cy: 540 },
-  { t: 27.54, crop: SNAP, k: 1.1, cx: 960, cy: 540 },
+  { t: 27.05, crop: SNAP, k: 1.42, cx: 960, cy: 540 },
+  { t: 27.54, crop: SNAP, k: 1.42, cx: 960, cy: 540 },
   { t: 27.8, crop: STACK, k: 2.8, cx: 960, cy: 540, ease: E.out },
   { t: 28.0, crop: STACK, k: 2.8, cx: 960, cy: 540 },
   { t: 28.4999, crop: STACK, k: 2.86, cx: 960, cy: 540, ease: E.lin },

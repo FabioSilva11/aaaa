@@ -78,10 +78,10 @@ export function Montage() {
         opacity={0} anim={{ opacity: [[39.45, 0, E.out], [39.9, 1], [46.3, 1, E.in], [46.8, 0]] }} />
       <Word text="Design." at={39.6} until={41.45} />
       <Word text="Lógica." at={41.6} until={43.45} />
-      <Word text="Desenvolvimento." at={43.6} until={45.35} />
-      <G from={45.5} to={46.8}>
+      <Word text="Desenvolvimento." at={43.6} until={45.2} />
+      <G from={45.55} to={46.8}>
         <T x={0} y={500} w={1920} h={80} align="center" baseline="middle" size={64} weight={700} color="#FFFFFF" spacing={-1}
-          shadow={{ blur: 30, y: 8, opacity: 0.5 }} anim={rise(45.5, 20, 0.6, 46.4, 0.35)}>Design. Lógica. Desenvolvimento.</T>
+          shadow={{ blur: 30, y: 8, opacity: 0.5 }} anim={rise(45.55, 20, 0.6, 46.4, 0.35)}>Design. Lógica. Desenvolvimento.</T>
       </G>
     </G>
   );
