@@ -70,5 +70,9 @@ node production/tools/render/render.mjs                  # → production/output
 node production/tools/render/render.mjs --from 21 --to 31 --out /tmp/trecho.mp4 --no-audio   # um trecho
 ```
 
+As fontes (Inter, licença OFL) que o runtime pede ao Google Fonts são servidas de
+`production/tools/render/font-cache/`, então o render não depende da rede; se alguma fonte não
+carregar, o `render.mjs` falha em vez de entregar um vídeo com fonte substituta.
+
 O Chromium do Playwright não traz codificador H.264, então o host grava um master VP9/Opus
 (`*.master.webm`, 24 Mb/s) e o `render.mjs` gera a entrega H.264 High/AAC com ffmpeg.

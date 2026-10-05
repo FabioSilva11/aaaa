@@ -145,6 +145,39 @@ await page.exposeFunction("__progress", (p) => {
   const now = Date.now();
   if (now - last > 5000) { console.log(p); last = now; }
 });
+// Fonts: the runtime loads Google Fonts at render time. Serve them from a
+// local cache (font-cache/, filled on first use) so a render never depends
+// on the network — and never silently falls back to a default face.
+const FONT_CACHE = join(here, "font-cache");
+await mkdir(FONT_CACHE, { recursive: true });
+const { createHash } = await import("node:crypto");
+await page.route(/^https:\/\/fonts\.(googleapis|gstatic)\.com\//, async (route) => {
+  const url = route.request().url();
+  const key = createHash("sha1").update(url).digest("hex");
+  const file = join(FONT_CACHE, key);
+  try {
+    const cached = JSON.parse(await readFile(`${file}.json`, "utf8"));
+    return route.fulfill({ status: 200, headers: cached.headers, body: await readFile(file) });
+  } catch {}
+  for (let attempt = 0; attempt < 6; attempt++) {
+    try {
+      const res = await route.fetch();
+      if (res.ok()) {
+        const body = await res.body();
+        const headers = { "content-type": res.headers()["content-type"] ?? "application/octet-stream", "access-control-allow-origin": "*", "cross-origin-resource-policy": "cross-origin" };
+        await writeFile(file, body);
+        await writeFile(`${file}.json`, JSON.stringify({ url, headers }));
+        return route.fulfill({ status: 200, headers, body });
+      }
+    } catch {}
+    await new Promise((ok) => setTimeout(ok, 1000 * 2 ** attempt));
+  }
+  console.log(`[fonts] could not fetch ${url}`);
+  return route.abort();
+});
+let fontFailure = false;
+page.on("console", (msg) => { if (/Font .* could not be loaded/.test(msg.text())) fontFailure = true; });
+
 await page.goto(`http://127.0.0.1:${port}/`);
 await page.waitForFunction(() => typeof window.__render === "function");
 await page.evaluate(() => { window.__log = (m) => window.__progress(m); });
@@ -157,6 +190,10 @@ console.log(`render took ${((Date.now() - started) / 1000).toFixed(1)}s → ${ou
 await browser.close();
 server.close();
 if (!report.ok) process.exit(1);
+if (fontFailure) {
+  console.log("A font failed to load: the render would use a fallback face. Not delivering it.");
+  process.exit(1);
+}
 
 // Delivery file: H.264 High / AAC MP4, 1920×1080, from the VP9 master.
 const { execFileSync } = await import("node:child_process");
