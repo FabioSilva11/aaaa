@@ -39,7 +39,7 @@ const MIME = {
   ".ttf": "font/ttf", ".woff2": "font/woff2",
 };
 
-const code = await compileProject(PROJECT);
+const code = await compileProject(PROJECT, arg("entry"));
 await mkdir(dirname(out), { recursive: true });
 
 const master = out.replace(/\.mp4$/, "") + ".master.webm";

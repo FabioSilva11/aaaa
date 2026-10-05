@@ -161,14 +161,20 @@ function Blur(p: { value: number | Key[]; start: number }) {
  * A group placed by its centre, scaling/rotating about it. `w`×`h` is its
  * box; children are laid out in 0..w, 0..h. `anim.cx`/`anim.cy` move the
  * centre.
+ *
+ * `pad` reserves an invisible margin around the box so that children that
+ * reach outside it (a clipped video larger than its window, an off-screen
+ * slide) do not move the pivot: the group's bounds are then the padded box,
+ * whose centre is still the box centre.
  */
-export function Box(p: GroupProps & { cx: number; cy: number; w: number; h: number }) {
+export function Box(p: GroupProps & { cx: number; cy: number; w: number; h: number; pad?: number }) {
+  const pad = p.pad ?? 0;
   const anim: Anim = { ...(p.anim ?? {}) };
-  if (anim.cx) { anim.x = anim.cx.map(([t, v, e]) => [t, (v as number) - p.w / 2, e ?? E.lin] as Key); delete anim.cx; }
-  if (anim.cy) { anim.y = anim.cy.map(([t, v, e]) => [t, (v as number) - p.h / 2, e ?? E.lin] as Key); delete anim.cy; }
+  if (anim.cx) { anim.x = anim.cx.map(([t, v, e]) => [t, (v as number) - p.w / 2 - pad, e ?? E.lin] as Key); delete anim.cx; }
+  if (anim.cy) { anim.y = anim.cy.map(([t, v, e]) => [t, (v as number) - p.h / 2 - pad, e ?? E.lin] as Key); delete anim.cy; }
   return (
-    <G {...p} x={p.cx - p.w / 2} y={p.cy - p.h / 2} bounds={[0, 0, p.w, p.h]} anim={anim}>
-      {p.children}
+    <G {...p} x={p.cx - p.w / 2 - pad} y={p.cy - p.h / 2 - pad} bounds={[0, 0, p.w + 2 * pad, p.h + 2 * pad]} anim={anim}>
+      {pad ? <G x={pad} y={pad}>{p.children}</G> : p.children}
     </G>
   );
 }
@@ -304,7 +310,7 @@ export type Shot = { t: number; x: number; y: number; s: number; r?: number; eas
  * keys of one group whose pivot is pinned by its bounds.
  */
 export function Camera(p: Timed & { shots: Shot[]; children: JSX.Element; drift?: number }) {
-  const B = 20000;
+  const B = 100000;
   const P0 = { x: B / 2, y: B / 2 };
   // world origin sits at the bounds' centre so content at negative world
   // coordinates stays inside the box (and the pivot stays put)

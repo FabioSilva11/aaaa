@@ -1,0 +1,2803 @@
+{
+ "logs": [
+  {
+   "range": "0-20 s",
+   "events": [
+    {
+     "t_start": 0,
+     "t_end": 2,
+     "screen": "Design tab (empty layout)",
+     "action": "Static idle shot of the Design tab. The phone-preview canvas is empty below the Toolbar, the widget palette is on the left, and the bottom bar shows main.xml / Run. Nothing moves; the only changes are the status bar and the burned-in timestamp.",
+     "visible_text": "\"8:21\", \"NewProject\", \"601\", tabs \"Design\" \"Event\" \"Component\" \"Strings\", \"Create a widget\", \"Layouts\", \"Linear(H)\", \"Linear(V)\", \"Scroll(H)\", \"Scroll(V)\", \"RadioGroup\", \"RelativeLayout\", \"FrameLayout\", \"Include\", \"AndroidX\", \"TabLayout\", \"BottomNavigationView\", \"CollapsingToolbar\", \"CardView\", \"TextInputLayout\", \"SwipeRefreshLayout\", \"ConstraintLayout\", \"NestedScrollView\", \"MaterialCardView\", \"Widgets\", canvas \"main.xml\" \"1:37\" \"Toolbar\", bottom bar \"main.xml\" \"Run\"; ad \"Anúncio de teste\" \"Nice job!\" \"This is a 468x60 test ad.\"",
+     "ad_banner_visible": true,
+     "overlays_or_glitches": "Google test ad banner at full-res y=1686-1820. Status bar with clock 8:21 and a notification icon.",
+     "promo_value": "low"
+    },
+    {
+     "t_start": 2,
+     "t_end": 2.4,
+     "screen": "Design tab (drag start)",
+     "action": "The finger goes down on \"Linear(H)\" in the palette (touch circle at about 1.94 s native). At 2.2 the item lifts as a translucent drag ghost labelled \"Linear(H)\", and a red no-drop icon shows at the left edge. By 2.4 the ghost is over the canvas: the canvas gets a dashed blue outline and the drop slot directly under the Toolbar is highlighted in light blue.",
+     "visible_text": "\"Linear(H)\" (ghost), palette and canvas text as above",
+     "ad_banner_visible": true,
+     "overlays_or_glitches": "Touch indicator circle. At 2.2 a red circle-slash no-drop icon at the left screen edge (x of about 10 in full res). Ad banner visible.",
+     "promo_value": "high"
+    },
+    {
+     "t_start": 2.4,
+     "t_end": 3.4,
+     "screen": "Design tab (dragging over canvas)",
+     "action": "The ghost \"Linear(H)\" sits still over the canvas at full-res (about 380-590, 696) with the touch circle on it. The dashed drop outline and the highlighted slot under the Toolbar stay visible. The touch circle is last seen at 3.2 (native 3.26 s), so the finger lifts there.",
+     "visible_text": "\"Linear(H)\" ghost, \"main.xml\" \"Toolbar\" \"1:37\"",
+     "ad_banner_visible": true,
+     "overlays_or_glitches": "Touch indicator circle until 3.2. Ad banner visible.",
+     "promo_value": "medium"
+    },
+    {
+     "t_start": 3.4,
+     "t_end": 4.6,
+     "screen": "Design tab (frozen drag)",
+     "action": "App lag: the finger is already up but the ghost and the drop highlight stay frozen with no change for about 1.2 s. This dead time should be cut.",
+     "visible_text": "\"Linear(H)\" ghost",
+     "ad_banner_visible": true,
+     "overlays_or_glitches": "Static frozen frame. Ad banner visible.",
+     "promo_value": "low"
+    },
+    {
+     "t_start": 4.6,
+     "t_end": 5.4,
+     "screen": "Design tab (linear1 dropped, property bar)",
+     "action": "The drop commits in one frame (native 4.54 s). A teal LinearLayout bar (linear1) appears under the Toolbar (full-res y of about 496-540). At the same moment the bottom main.xml/Run bar and the test ad are replaced by the widget property bar.",
+     "visible_text": "\"linear1\", \"Basic\", \"Recent\", \"Event\", \"Custom attributes\", \"Convert\", \"Width\", \"Heigh\" (clipped), \"See All\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "None until 5.2. A touch circle appears at 5.4 (start of the next event).",
+     "promo_value": "high"
+    },
+    {
+     "t_start": 5.4,
+     "t_end": 6.4,
+     "screen": "Design tab (linear1 selected)",
+     "action": "Stray upward swipe with no UI change. The touch circle goes from the empty canvas (full-res about 750,1190) at 5.4, past the linear1 bar at 5.6, to the tab bar near \"Strings\" (about 700,310) at 5.8-6.0, then fades by 6.2.",
+     "visible_text": "Same as previous; \"linear1\" property bar",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "Moving touch-indicator circle across the canvas and tab bar.",
+     "promo_value": "low"
+    },
+    {
+     "t_start": 6.4,
+     "t_end": 7.8,
+     "screen": "Design tab (linear1 selected)",
+     "action": "Tap on the \"See All\" card at the right end of the property bar (touch circle at full-res about 790,1710 at 6.6, native 6.52 s). Then about 1.1 s of nothing (6.8-7.6) while the next screen loads.",
+     "visible_text": "\"See All\", \"linear1\", \"Basic\" \"Recent\" \"Event\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "Touch circle at 6.6. Dead wait 6.8-7.6.",
+     "promo_value": "low"
+    },
+    {
+     "t_start": 7.8,
+     "t_end": 8.4,
+     "screen": "Edit Properties (slide-in transition)",
+     "action": "The Edit Properties screen slides in from the right over the dimmed Design screen (7.8 is mid-slide, 8.0 nearly in). It is fully settled by 8.2-8.4 (native 8.29 s).",
+     "visible_text": "\"Edit Properties\", \"linear1\", \"ID\", \"Custom attributes\", \"Convert\" \"LinearLayout\", \"Layout Properties\", \"Width\" \"match_parent\", \"Height\" \"wrap_content\", \"Padding\" \"left: 8, top: 8, right: 8, bottom: 8\", \"Margin\" \"left: 0, top: 0, right: 0, bottom: 0\", \"Orientation\" \"horizontal\", \"Weight sum\" \"0\", \"Gravity\" \"none\", \"Layout gravity\" \"none\", \"Weight\" \"0\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "Activity transition with dim scrim and rounded card edge.",
+     "promo_value": "medium"
+    },
+    {
+     "t_start": 8.4,
+     "t_end": 9.2,
+     "screen": "Edit Properties (linear1)",
+     "action": "Static, clean Edit Properties list for linear1 with no touches.",
+     "visible_text": "\"Edit Properties\", \"linear1\", \"Width\" \"match_parent\", \"Height\" \"wrap_content\", \"Padding\" \"left: 8, top: 8, right: 8, bottom: 8\", \"Orientation\" \"horizontal\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "",
+     "promo_value": "medium"
+    },
+    {
+     "t_start": 9.2,
+     "t_end": 10,
+     "screen": "Edit Properties, then Width dialog",
+     "action": "Tap on the Width row (touch circle at full-res about 462,746 at 9.2, native 9.28 s). A ripple runs across the row at 9.4. The Width dialog fades and scales in over 9.6-9.8 and settles by about 10.0. match_parent is preselected.",
+     "visible_text": "Dialog: \"Width\", \"match_parent\" (selected), \"wrap_content\", \"Custom value\", \"Cancel\", \"Select\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "Touch circle and row ripple. Grey dim scrim behind the dialog. Status-bar icons dim with the scrim.",
+     "promo_value": "medium"
+    },
+    {
+     "t_start": 10,
+     "t_end": 11,
+     "screen": "Width dialog",
+     "action": "The Width dialog stays open and unchanged, with match_parent selected. No interaction.",
+     "visible_text": "\"Width\", \"match_parent\", \"wrap_content\", \"Custom value\", \"Cancel\", \"Select\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "Dim scrim.",
+     "promo_value": "low"
+    },
+    {
+     "t_start": 11,
+     "t_end": 11.4,
+     "screen": "Width dialog dismissed, back to Edit Properties",
+     "action": "Tap outside the dialog, just below it (touch circle at full-res about 388,1342, native 10.93 s). The dialog fades out at 11.0 and is gone by 11.2. Nothing changes: Width is still match_parent.",
+     "visible_text": "\"Width\" \"match_parent\", \"Height\" \"wrap_content\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "Touch circle and a semi-transparent fading dialog at 11.0.",
+     "promo_value": "low"
+    },
+    {
+     "t_start": 11.4,
+     "t_end": 12,
+     "screen": "Edit Properties, then Height dialog",
+     "action": "Tap on the Height row (touch circle at full-res about 490,854 at 11.4, native 11.38 s). Row ripple, then the Height dialog fades and scales in at 11.6 and is settled at 11.8-12.0 with wrap_content selected.",
+     "visible_text": "Dialog: \"Height\", \"match_parent\", \"wrap_content\" (selected), \"Custom value\", \"Cancel\", \"Select\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "Touch circle, ripple, and a semi-transparent dialog at 11.6.",
+     "promo_value": "high"
+    },
+    {
+     "t_start": 12,
+     "t_end": 12.8,
+     "screen": "Height dialog",
+     "action": "The Height dialog stays open and unchanged with wrap_content selected. The user pauses.",
+     "visible_text": "\"Height\", \"match_parent\", \"wrap_content\", \"Custom value\", \"Cancel\", \"Select\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "Dim scrim.",
+     "promo_value": "medium"
+    },
+    {
+     "t_start": 12.8,
+     "t_end": 13.4,
+     "screen": "Height dialog",
+     "action": "Tap on match_parent (touch circle at full-res about 398,896 at 12.8, native 12.75 s). The radio animates: at 13.0 match_parent is filled with a press halo while wrap_content fades. By 13.2 match_parent is selected and wrap_content is empty.",
+     "visible_text": "\"match_parent\" (now selected), \"wrap_content\", \"Custom value\", \"Cancel\", \"Select\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "Touch circle and radio press halo.",
+     "promo_value": "high"
+    },
+    {
+     "t_start": 13.4,
+     "t_end": 14,
+     "screen": "Height dialog closed, Edit Properties",
+     "action": "Tap \"Select\" (touch circle on Select at full-res about 686,1196 at 13.4, native 13.40 s). The dialog dismisses at 13.6 (native 13.53-13.70 s). The Height row now reads match_parent. Settled at 13.8.",
+     "visible_text": "\"Width\" \"match_parent\", \"Height\" \"match_parent\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "Touch circle. At 13.6 the status-bar icons are faded and there is a faint ripple on the Height row.",
+     "promo_value": "high"
+    },
+    {
+     "t_start": 14,
+     "t_end": 15.2,
+     "screen": "Edit Properties",
+     "action": "The user presses the system Back button in the navigation bar (touch circle and pill ripple on the back triangle at 14.0-14.4, native 14.03-14.36 s). Then about 0.8 s wait with no change (14.4-15.0).",
+     "visible_text": "\"Edit Properties\", \"linear1\", \"Height\" \"match_parent\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "Navigation-bar touch circle and ripple at full-res y of about 1866.",
+     "promo_value": "low"
+    },
+    {
+     "t_start": 15.2,
+     "t_end": 15.8,
+     "screen": "Edit Properties sliding out, then Design tab",
+     "action": "Edit Properties slides out to the right (15.2 is half off, 15.4 almost gone) and reveals the Design tab. linear1 now fills the whole canvas in teal (match_parent x match_parent). Settled by 15.6-15.8.",
+     "visible_text": "\"NewProject\", \"601\", \"Design\", \"main.xml\", \"Toolbar\", \"1:37\", \"linear1\", \"Basic\" \"Recent\" \"Event\", \"Custom attributes\", \"Convert\", \"Width\", \"Heigh\", \"See All\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "Transition scrim. A palette scrollbar is visible at x of about 250 in full res.",
+     "promo_value": "high"
+    },
+    {
+     "t_start": 15.8,
+     "t_end": 16.6,
+     "screen": "Design tab (linear1 full canvas, selected)",
+     "action": "Static: the canvas below the Toolbar is filled in teal by linear1 and the property bar is shown. The palette scrollbar fades out around 16.4-16.6.",
+     "visible_text": "\"linear1\", \"Basic\", \"Recent\", \"Event\", \"Custom attributes\", \"Convert\", \"Width\", \"Heigh\", \"See All\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "",
+     "promo_value": "medium"
+    },
+    {
+     "t_start": 16.6,
+     "t_end": 17.8,
+     "screen": "Design tab, property bar",
+     "action": "The finger goes down on the property card row (native 16.70 s) and swipes it horizontally (16.8-17.6). Cards scroll to show Width, Height, Padding and Margin (17.0-17.2), then partially back (17.4). The row settles at 17.8 on \"…ustom attributes, Convert, Width, Height, Padding\". The sticky \"See All\" card shifts down during the swipe.",
+     "visible_text": "\"Convert\", \"Width\", \"Height\", \"Padding\", \"Margin\", \"See All\", \"linear1\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "Touch circle on the Width card. The status-bar clock changes from 8:21 to 8:22 at native 17.37 s.",
+     "promo_value": "low"
+    },
+    {
+     "t_start": 17.8,
+     "t_end": 19.2,
+     "screen": "Design tab (linear1 full canvas, selected)",
+     "action": "Mostly idle. A stray touch rests on the palette near the \"AndroidX\" header (full-res about 136,994) from 18.4 to 18.6 and does nothing.",
+     "visible_text": "\"AndroidX\", \"TabLayout\", \"linear1\", \"Convert\", \"Width\", \"Height\", \"Padding\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "Touch circle at 18.4-18.6.",
+     "promo_value": "low"
+    },
+    {
+     "t_start": 19.2,
+     "t_end": 19.4,
+     "screen": "Design tab",
+     "action": "Tap on \"Linear(V)\" in the palette (touch circle at full-res about 158,624 at 19.2, native 19.15 s). This deselects linear1: at 19.4 (native 19.32 s) the teal fill disappears, leaving a thin outline over the white canvas, the property bar is replaced by the main.xml / Run bar, and the test ad banner returns.",
+     "visible_text": "\"Linear(V)\", \"main.xml\", \"Run\", \"Anúncio de teste\", \"Nice job!\", \"This is a 468x60 test ad.\"",
+     "ad_banner_visible": true,
+     "overlays_or_glitches": "Touch circle. The ad banner reappears at 19.4.",
+     "promo_value": "low"
+    },
+    {
+     "t_start": 19.4,
+     "t_end": 20,
+     "screen": "Design tab (linear1 deselected)",
+     "action": "Design tab with an unselected full-size linear1: a white canvas with a thin grey outline. Tap on the empty canvas centre (touch circle at full-res about 546,806 at 19.8, native 19.77 s) with no visible effect up to 20.2.",
+     "visible_text": "\"main.xml\", \"Run\", \"Widgets\", \"MaterialCardView\", ad \"Anúncio de teste\" \"Nice job!\" \"This is a 468x60 test ad.\"",
+     "ad_banner_visible": true,
+     "overlays_or_glitches": "Ad banner. Touch circle at 19.8.",
+     "promo_value": "low"
+    }
+   ],
+   "best_clips": [
+    {
+     "name": "Height -> match_parent (dialog pick and Select)",
+     "source_in": 11.3,
+     "source_out": 13.9,
+     "shows": "Tap the Height row on Edit Properties (linear1). The Height dialog opens with wrap_content selected, the user picks match_parent and taps Select, and the row updates to Height match_parent.",
+     "crop": {
+      "x": 0,
+      "y": 96,
+      "w": 864,
+      "h": 1536
+     },
+     "suggested_speed": 1.25,
+     "notes": "Best property-editing moment. The crop is exactly 9:16 (full-res y 96-1632): it removes the status bar and nav bar and keeps the header through the Layout gravity row, with the dialog at y 606-1300 fully inside. 12.1-12.7 is an idle pause that can be cut or sped up 2x. No ad on this screen."
+    },
+    {
+     "name": "Drag Linear(H) onto the canvas",
+     "source_in": 1.9,
+     "source_out": 5,
+     "shows": "The finger picks Linear(H) from the palette. The ghost is dragged onto the canvas with a dashed drop outline and a highlighted slot under the Toolbar, then the teal linear1 bar appears.",
+     "crop": {
+      "x": 0,
+      "y": 96,
+      "w": 864,
+      "h": 1344
+     },
+     "suggested_speed": 1,
+     "notes": "The crop (full-res y 96-1440) excludes the test ad (y 1686-1820) and the bottom-bar swap at 4.54 s, where main.xml/Run is replaced by the property bar. Cut the frozen app-lag stretch 2.8-4.4 (the ghost does not move, and the finger is already up at about 3.3), so the edit runs about 1.9-2.8 then 4.4-5.0 and the drop lands at 4.54. The red no-drop icon at 2.2 is at the far left edge (x of about 10) and is visible in this crop, so start at 2.3 if it bothers you. The aspect is 9:14, not 9:16."
+    },
+    {
+     "name": "Back to Design: linear1 fills the screen",
+     "source_in": 15,
+     "source_out": 16.4,
+     "shows": "Edit Properties slides away to the right and reveals the Design canvas, now fully filled in teal by linear1 (match_parent x match_parent), with the linear1 property bar.",
+     "crop": {
+      "x": 0,
+      "y": 96,
+      "w": 864,
+      "h": 1536
+     },
+     "suggested_speed": 1,
+     "notes": "9:16 crop ending at y 1632 keeps the \"linear1\" header and the Basic/Recent/Event chips and cuts cleanly above the property cards (y 1640+). To show the cards too, use x0 y96 w864 h1720 (no ad in this stretch). Pairs well right after the Height clip as the payoff shot."
+    },
+    {
+     "name": "Open Edit Properties (See All)",
+     "source_in": 6.4,
+     "source_out": 8.6,
+     "shows": "Tap \"See All\" on the linear1 property bar, then the Edit Properties screen slides in listing ID, Convert LinearLayout, Width, Height, Padding, Margin, Orientation and more.",
+     "crop": {
+      "x": 0,
+      "y": 96,
+      "w": 864,
+      "h": 1720
+     },
+     "suggested_speed": 1.5,
+     "notes": "There is about 1.1 s of dead wait (6.8-7.6) between the tap and the transition: cut it or speed it up. No ad. The crop stops at y 1816, above the nav bar. For 9:16 use h 1536, but that cuts the See All card, so the tap would be off-screen."
+    },
+    {
+     "name": "Width dialog (preview only)",
+     "source_in": 9.1,
+     "source_out": 10.4,
+     "shows": "Tap on the Width row, then the Width dialog opens with match_parent selected and the options wrap_content / Custom value.",
+     "crop": {
+      "x": 0,
+      "y": 96,
+      "w": 864,
+      "h": 1536
+     },
+     "suggested_speed": 1.25,
+     "notes": "The user does not change Width: the dialog is dismissed by tapping outside it at about 10.93. Use this only as a quick cutaway, ending before 10.9. Same 9:16 crop as the Height clip."
+    }
+   ],
+   "key_moments": [
+    {
+     "t": 0,
+     "what": "Recording starts on the Design tab with an empty canvas (main.xml, Toolbar, 1:37). The test ad banner is visible."
+    },
+    {
+     "t": 2,
+     "what": "Finger down on palette item \"Linear(H)\" (native 1.94 s)."
+    },
+    {
+     "t": 2.2,
+     "what": "Drag ghost \"Linear(H)\" lifts; a red no-drop icon shows at the left edge (native 2.23 s)."
+    },
+    {
+     "t": 2.4,
+     "what": "Ghost over the canvas: dashed blue drop outline and highlighted slot under the Toolbar appear (native 2.36 s)."
+    },
+    {
+     "t": 3.4,
+     "what": "Touch circle gone: the finger has lifted (last seen 3.2, native 3.26 s), but the ghost stays frozen until 4.4."
+    },
+    {
+     "t": 4.6,
+     "what": "Drop commits: teal linear1 bar appears, the bottom bar becomes the linear1 property bar, and the ad banner disappears (native 4.54 s)."
+    },
+    {
+     "t": 5.4,
+     "what": "Stray upward swipe begins on the empty canvas (native 5.33 s) and ends at the tab bar about 5.9. No UI change."
+    },
+    {
+     "t": 6.6,
+     "what": "Tap on \"See All\" (native 6.52 s)."
+    },
+    {
+     "t": 7.8,
+     "what": "Edit Properties begins sliding in from the right (native 7.84 s); settled about 8.3."
+    },
+    {
+     "t": 9.2,
+     "what": "Tap on the Width row (native 9.28 s)."
+    },
+    {
+     "t": 9.8,
+     "what": "Width dialog fully shown with match_parent selected (fade-in 9.65-9.94 native)."
+    },
+    {
+     "t": 11,
+     "what": "Tap outside the Width dialog (native 10.93 s); it fades out, gone by 11.2, with no change."
+    },
+    {
+     "t": 11.4,
+     "what": "Tap on the Height row (native 11.38 s)."
+    },
+    {
+     "t": 11.8,
+     "what": "Height dialog fully shown with wrap_content selected (fade-in from 11.59 native)."
+    },
+    {
+     "t": 12.8,
+     "what": "Tap on match_parent in the Height dialog (native 12.75 s)."
+    },
+    {
+     "t": 13.2,
+     "what": "Radio settled: match_parent selected, wrap_content cleared."
+    },
+    {
+     "t": 13.4,
+     "what": "Tap \"Select\" (native 13.40 s)."
+    },
+    {
+     "t": 13.6,
+     "what": "Dialog dismissed; the Height row now reads \"match_parent\" (native 13.53 s)."
+    },
+    {
+     "t": 14,
+     "what": "System Back pressed in the nav bar (native 14.03 s)."
+    },
+    {
+     "t": 15.2,
+     "what": "Edit Properties slides out to the right (native 15.21 s), revealing the Design tab."
+    },
+    {
+     "t": 15.6,
+     "what": "Design tab settled: linear1 fills the whole canvas in teal."
+    },
+    {
+     "t": 16.8,
+     "what": "Horizontal swipe of the property cards starts (finger down native 16.70 s); Padding and Margin come into view at 17.0."
+    },
+    {
+     "t": 17.4,
+     "what": "Status-bar clock flips 8:21 -> 8:22 (native 17.37 s)."
+    },
+    {
+     "t": 18.4,
+     "what": "Stray touch on the palette near the \"AndroidX\" header (native 18.45 s). No effect."
+    },
+    {
+     "t": 19.2,
+     "what": "Tap on \"Linear(V)\" in the palette (native 19.15 s)."
+    },
+    {
+     "t": 19.4,
+     "what": "linear1 deselected: teal fill gone, the main.xml/Run bar returns, and the ad banner returns (native 19.32 s)."
+    },
+    {
+     "t": 19.8,
+     "what": "Tap on the empty canvas centre (native 19.77 s). Nothing changes."
+    }
+   ]
+  },
+  {
+   "range": "20.0-40.0 s",
+   "events": [
+    {
+     "t_start": 20,
+     "t_end": 20.8,
+     "screen": "Design tab (main.xml), nothing selected",
+     "action": "Idle. linear1 (an empty match_parent LinearLayout) is already on the canvas as a white box with a thin grey border under the blue 'main.xml / Toolbar / 1:37' preview bar. The palette on the left shows the Layouts and AndroidX sections. The bottom bar shows main.xml, a grid icon and Run. No interaction.",
+     "visible_text": "\"NewProject\" \"601\" \"Design\" \"Event\" \"Component\" \"Strings\" \"Create a widget\" \"Layouts\" \"Linear(H)\" \"Linear(V)\" \"Scroll(H)\" \"Scroll(V)\" \"RadioGroup\" \"RelativeLayout\" \"FrameLayout\" \"Include\" \"AndroidX\" \"TabLayout\" \"BottomNavigationView\" \"CollapsingToolbar\" \"CardView\" \"TextInputLayout\" \"SwipeRefreshLayout\" \"ConstraintLayout\" \"NestedScrollView\" \"MaterialCardView\" \"main.xml\" \"Toolbar\" \"1:37\" \"Run\"",
+     "ad_banner_visible": true,
+     "overlays_or_glitches": "Status bar (\"8:22\", ghost icon, \"...\", 4G, wifi, battery \"99\") at y<85. Test ad banner at y≈1688-1818: \"Anúncio de teste\" / \"Nice job!\" / \"This is a 468x60 test ad.\"",
+     "promo_value": "low"
+    },
+    {
+     "t_start": 20.8,
+     "t_end": 22,
+     "screen": "Design tab, linear1 selected",
+     "action": "Taps the empty canvas (touch circle at about x694,y1414 full-res, visible 20.8). At 21.0 linear1 is selected: the whole canvas fills teal. A property panel header ('linear1', dropdown, delete and save icons, and the chips Basic/Recent/Event) appears below the main.xml/Run bar, in place of the ad. It stays half-revealed from 21.0 to 21.8.",
+     "visible_text": "\"linear1\" \"Basic\" \"Recent\" \"Event\" \"main.xml\" \"Run\"",
+     "ad_banner_visible": true,
+     "overlays_or_glitches": "Ad visible only until 20.8 (exact seek: until 20.9). From 21.0 the panel replaces it. Touch indicator circle at 20.8-21.0.",
+     "promo_value": "medium"
+    },
+    {
+     "t_start": 22,
+     "t_end": 22.6,
+     "screen": "Design tab, linear1 property panel (Basic)",
+     "action": "The property panel slides up fully at about 22.0 (exact seek 22.1) and covers the Run bar. It shows a horizontal strip of property buttons. Idle.",
+     "visible_text": "\"linear1\" \"Basic\" \"Recent\" \"Event\" \"Custom attributes\" \"Convert\" \"Width\" \"Height\" \"Padding\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "",
+     "promo_value": "medium"
+    },
+    {
+     "t_start": 22.6,
+     "t_end": 23.4,
+     "screen": "Design tab, linear1 property panel",
+     "action": "Swipes the property-button strip left (finger on Margin at 22.8) and flings it to the end. 22.8 shows Height…Weight sum, 23.0 shows Weight sum…Weight, and 23.2 is the end of the strip with Background resource/color.",
+     "visible_text": "\"Padding\" \"Margin\" \"Orientation\" \"Weight sum\" \"Gravity\" \"Layout gravity\" \"Weight\" \"Background resource\" \"Background color\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "Touch circle on the strip at 22.8. Motion blur is minimal.",
+     "promo_value": "medium"
+    },
+    {
+     "t_start": 23.4,
+     "t_end": 24,
+     "screen": "Design tab, linear1 property panel",
+     "action": "Swipes the strip back right to the start (touch near Margin at 23.4). A floating '...' 'See All' chip slides up at the right end of the strip (23.4-23.6). By 23.6 the strip is back at Custom attributes / Convert / Width / Height with 'See All' on top.",
+     "visible_text": "\"Custom attributes\" \"Convert\" \"Width\" \"Heigh\" \"See All\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "Touch circle at 23.4.",
+     "promo_value": "medium"
+    },
+    {
+     "t_start": 24,
+     "t_end": 25.2,
+     "screen": "Design tab, linear1 property panel",
+     "action": "Taps 'See All' (touch circle at 24.0, about x1540-1550 in the sheet, bottom-right chip). The chip stays highlighted. There is about 1 s of waiting with no visible change (24.2-25.0) before the next screen opens.",
+     "visible_text": "\"See All\" \"linear1\" \"Custom attributes\" \"Convert\" \"Width\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "Touch circle at 24.0. Dead time from 24.2 to 25.0.",
+     "promo_value": "low"
+    },
+    {
+     "t_start": 25.2,
+     "t_end": 25.6,
+     "screen": "Transition Design -> Edit Properties",
+     "action": "The Edit Properties activity slides in from the right over the Design screen (25.2). It is almost fully in at 25.4 and settled at 25.6.",
+     "visible_text": "\"Edit Properties\" \"linear1\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "25.2: two layers with a dimmed Design screen at the left edge. 25.4: black rounded-corner window artifacts at the top-right and bottom corners.",
+     "promo_value": "low"
+    },
+    {
+     "t_start": 25.6,
+     "t_end": 26.2,
+     "screen": "Edit Properties (linear1), scrolled to top",
+     "action": "Idle on the full property list of linear1.",
+     "visible_text": "\"Edit Properties\" \"linear1\" \"ID\" \"linear1\" \"Custom attributes\" \"Convert\" \"LinearLayout\" \"Layout Properties\" \"Width\" \"match_parent\" \"Height\" \"match_parent\" \"Padding\" \"left: 8, top: 8, right: 8, bottom: 8\" \"Margin\" \"left: 0, top: 0, right: 0, bottom: 0\" \"Orientation\" \"horizontal\" \"Weight sum\" \"0\" \"Gravity\" \"none\" \"Layout gravity\" \"none\" \"Weight\" \"0\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "Status bar at top and nav bar (square, circle, back triangle, accessibility icon) at y>1820.",
+     "promo_value": "medium"
+    },
+    {
+     "t_start": 26.2,
+     "t_end": 27.2,
+     "screen": "Edit Properties (linear1)",
+     "action": "Drags the list up from the right side (touch circle at the right edge of the Layout gravity row). The list scrolls about 190 px, so 'Layout Properties' becomes a sticky header under the app bar and 'Image Properties' comes into view.",
+     "visible_text": "\"Layout Properties\" \"Image Properties\" \"Background resource\" \"NONE\" \"Background color\" \"NONE\" \"Rotate\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "Touch circle visible throughout.",
+     "promo_value": "medium"
+    },
+    {
+     "t_start": 27.2,
+     "t_end": 28.4,
+     "screen": "Edit Properties (linear1), scrolled",
+     "action": "Idle. The finger stays down until about 27.8 (touch circle on the right), then lifts and the circle fades by 28.0.",
+     "visible_text": "\"Width\" \"Height\" \"Padding\" \"Margin\" \"Orientation\" \"Weight sum\" \"Gravity\" \"none\" \"Layout gravity\" \"Weight\" \"Image Properties\" \"Background resource\" \"Background color\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "Touch circle until 27.8.",
+     "promo_value": "low"
+    },
+    {
+     "t_start": 28.4,
+     "t_end": 29,
+     "screen": "Edit Properties -> Gravity dialog opening",
+     "action": "Taps the 'Gravity / none' row (touch at 28.4, grey ripple at 28.6). The Gravity dialog fades and scales in over a grey scrim (28.8) and is fully open at 29.0.",
+     "visible_text": "\"Gravity\" \"none\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "28.8 is a half-transparent dialog frame where the dialog and the list text overlap.",
+     "promo_value": "high"
+    },
+    {
+     "t_start": 29,
+     "t_end": 29.4,
+     "screen": "Gravity dialog",
+     "action": "The dialog is open and every box is unchecked. Idle.",
+     "visible_text": "\"Gravity\" \"left\" \"right\" \"center\" \"center_horizontal\" \"top\" \"bottom\" \"center_vertical\" \"Cancel\" \"Select\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "The scrim also dims the status and nav bars. At 29.2 the battery icon and nav-bar icons briefly flicker or fade.",
+     "promo_value": "high"
+    },
+    {
+     "t_start": 29.4,
+     "t_end": 29.8,
+     "screen": "Gravity dialog",
+     "action": "Taps center_horizontal. The checkbox animates to checked (purple) at 29.4 and is fully checked at 29.6.",
+     "visible_text": "\"center_horizontal\" (checked)",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "Touch circle to the right of the label at 29.4.",
+     "promo_value": "high"
+    },
+    {
+     "t_start": 29.8,
+     "t_end": 30.4,
+     "screen": "Gravity dialog",
+     "action": "Taps center_vertical (29.8). It is checked at 30.0, and both center_horizontal and center_vertical are now checked.",
+     "visible_text": "\"center_horizontal\" \"center_vertical\" (both checked) \"Cancel\" \"Select\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "Touch circle at 29.8. Checkbox ripple at 30.0-30.2.",
+     "promo_value": "high"
+    },
+    {
+     "t_start": 30.4,
+     "t_end": 30.8,
+     "screen": "Gravity dialog -> Edit Properties",
+     "action": "Taps 'Select' (30.4). The dialog fades out (30.6). The Gravity row now reads 'center_horizontal, center_vertical' and is clean by 30.8.",
+     "visible_text": "\"Select\" \"Gravity\" \"center_horizontal, center_vertical\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "30.6: the status-bar icons are almost invisible (scrim fade) and a ghost of the dialog overlaps the list.",
+     "promo_value": "high"
+    },
+    {
+     "t_start": 30.8,
+     "t_end": 32,
+     "screen": "Edit Properties (linear1), Gravity set",
+     "action": "Shows the updated value. At 31.0 the user taps the system Back button in the nav bar (grey pill highlight and touch circle, 31.0-31.4). Nothing moves until about 32.0.",
+     "visible_text": "\"Gravity\" \"center_horizontal, center_vertical\" \"Layout gravity\" \"none\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "Nav-bar back-button press highlight from 31.0 to 31.4. About 1 s of dead time.",
+     "promo_value": "medium"
+    },
+    {
+     "t_start": 32,
+     "t_end": 32.6,
+     "screen": "Transition Edit Properties -> Design tab",
+     "action": "Edit Properties slides out to the right and the Design tab returns. Settled by 32.6 (exact seek: by 32.4).",
+     "visible_text": "\"Edit Properties\" \"NewProject\" \"Design\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "Glitchy two-layer frames at 32.0-32.4: the Design screen is dimmed or offset and a sliver of Edit Properties stays at the right edge (32.2).",
+     "promo_value": "low"
+    },
+    {
+     "t_start": 32.6,
+     "t_end": 33.8,
+     "screen": "Design tab, linear1 selected (property panel)",
+     "action": "Idle. linear1 is still teal or selected with the 'linear1' panel showing. The empty layout shows no visual change from the gravity.",
+     "visible_text": "\"linear1\" \"Basic\" \"Recent\" \"Event\" \"Custom attributes\" \"Convert\" \"Width\" \"Heigh\" \"See All\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "The palette scrollbar is visible and fading.",
+     "promo_value": "low"
+    },
+    {
+     "t_start": 33.8,
+     "t_end": 34.8,
+     "screen": "Design tab, palette",
+     "action": "Scrolls the widget palette up with a finger on the palette (touch near CardView/CollapsingToolbar at 34.0, near the scrollbar at 34.2-34.4). The palette settles at 34.6 with the Widgets section in view.",
+     "visible_text": "\"AndroidX\" \"TabLayout\" \"CardView\" \"Widgets\" \"TextView\" \"EditText\" \"AutoCompleteTextView\" \"MultiAutoCompleteTextView\" \"Button\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "Touch circles.",
+     "promo_value": "medium"
+    },
+    {
+     "t_start": 34.8,
+     "t_end": 35.6,
+     "screen": "Design tab, start of drag",
+     "action": "Long-presses 'TextView' in the palette (touch circle at 35.0). At 35.2 the drag starts: the selection clears (canvas turns white), the property panel collapses and the main.xml/Run bar and ad banner return. At 35.4 the palette TextView item is ghosted while the drag shadow leaves it.",
+     "visible_text": "\"Widgets\" \"TextView\" \"MaterialButton\" \"ImageView\" \"main.xml\" \"Run\"",
+     "ad_banner_visible": true,
+     "overlays_or_glitches": "Ad banner back from 35.2 (exact 35.3). A small red 'no-drop' icon at the palette item around 35.4-35.5. Touch circle.",
+     "promo_value": "medium"
+    },
+    {
+     "t_start": 35.6,
+     "t_end": 37,
+     "screen": "Design tab, dragging TextView over the canvas",
+     "action": "The drag shadow (a light-blue rectangle plus a 'T TextView' label) is held at the centre of the canvas. linear1 shows a dashed blue drop-target outline. The finger drops at about 36.9-37.0.",
+     "visible_text": "\"TextView\" (drag shadow) \"main.xml\" \"Run\"",
+     "ad_banner_visible": true,
+     "overlays_or_glitches": "Ad banner at the bottom for the whole span. The touch circle is mostly hidden under the shadow (visible 35.6-35.8).",
+     "promo_value": "high"
+    },
+    {
+     "t_start": 37,
+     "t_end": 37.8,
+     "screen": "Design tab, textview2 selected",
+     "action": "After the drop, a small teal 'TextView' widget sits exactly in the centre of linear1 because of the center_horizontal|center_vertical gravity. The property panel opens for 'textview2' and covers the Run bar and the ad. Idle.",
+     "visible_text": "\"TextView\" \"textview2\" \"Basic\" \"Recent\" \"Event\" \"Custom attributes\" \"Convert\" \"Width\" \"Heigh\" \"See All\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "",
+     "promo_value": "high"
+    },
+    {
+     "t_start": 37.8,
+     "t_end": 38.2,
+     "screen": "Design tab -> Event tab (ViewPager swipe)",
+     "action": "Swipes left on the canvas (finger at about x520,y1236 full-res, moving left, 37.7-37.9). The page slides from Design to Event. Event is shown at 38.0 and settled by about 38.1. The tab indicator moves to 'Event' and the undo/redo icons disappear from the toolbar.",
+     "visible_text": "\"Design\" \"Event\" \"Component\" \"Strings\" \"Activity\" \"View\" \"Component\" \"Drawer\" \"Moreblock\"",
+     "ad_banner_visible": true,
+     "overlays_or_glitches": "37.8 is a mid-swipe frame with two pages. The ad banner reappears at 38.0. Touch circle.",
+     "promo_value": "medium"
+    },
+    {
+     "t_start": 38.2,
+     "t_end": 38.6,
+     "screen": "Event tab (Activity)",
+     "action": "Idle on the Event tab. The Activity rail item is selected and shows the onCreate event card.",
+     "visible_text": "\"onCreate\" \"On activity create\" \"Activity\" \"View\" \"Component\" \"Drawer\" \"Moreblock\" \"+\" \"MainActivity.java\" \"Run\"",
+     "ad_banner_visible": true,
+     "overlays_or_glitches": "Ad banner at y≈1688-1818.",
+     "promo_value": "medium"
+    },
+    {
+     "t_start": 38.6,
+     "t_end": 39.2,
+     "screen": "Event tab",
+     "action": "Taps the 'onCreate / On activity create' card (touch circle at 38.6 near the end of 'On activity create'). The card turns grey in its pressed state from 38.8 to 39.0.",
+     "visible_text": "\"onCreate\" \"On activity create\"",
+     "ad_banner_visible": true,
+     "overlays_or_glitches": "Touch circle at 38.6.",
+     "promo_value": "medium"
+    },
+    {
+     "t_start": 39.2,
+     "t_end": 40,
+     "screen": "Event tab -> Logic editor (onCreate) opening",
+     "action": "The editor loads with no visible change from 39.2 to 39.8. At about 39.9-40.0 a grey scrim appears and the logic-editor activity starts sliding in from the right. Its title reads 'onCreate / On activity create' and it has an orange 'On activity create' hat block. The transition continues past 40.0.",
+     "visible_text": "\"onCreate\" \"On activity create\" \"MainActivity.java\" \"Run\"",
+     "ad_banner_visible": true,
+     "overlays_or_glitches": "About 0.7 s of dead time. Scrim and slide transition at 40.0.",
+     "promo_value": "low"
+    }
+   ],
+   "best_clips": [
+    {
+     "name": "Gravity dialog: center_horizontal + center_vertical",
+     "source_in": 28.2,
+     "source_out": 31,
+     "shows": "In Edit Properties the user taps Gravity. The dialog pops in, center_horizontal and then center_vertical are checked, Select is tapped, and the row updates to 'center_horizontal, center_vertical'.",
+     "crop": {
+      "x": 0,
+      "y": 88,
+      "w": 864,
+      "h": 1732
+     },
+     "suggested_speed": 1.15,
+     "notes": "Cleanest and most readable clip in the range, with no ad anywhere. The crop removes the status bar (y<88) and the nav bar (y>1820), which also hides the status-bar icon flicker at 29.2 and 30.6. Optional tighter zoom on the dialog plus the resulting Gravity row: x0 y380 w864 h1140 (the dialog spans x60-804 and y400-1505, and the Gravity value sits at y≈1080-1130 after the scroll). The 28.8 frame is a half-faded dialog, which is fine as a natural pop-in. Pair it with the drop clip so the result shows: the TextView lands centred."
+    },
+    {
+     "name": "Drag TextView, auto-centred by gravity",
+     "source_in": 33.8,
+     "source_out": 37.6,
+     "shows": "Scrolls the palette to Widgets, long-presses TextView and drags it over the layout (dashed blue drop outline). It drops and lands exactly in the centre as 'textview2'.",
+     "crop": {
+      "x": 0,
+      "y": 88,
+      "w": 864,
+      "h": 1592
+     },
+     "suggested_speed": 1.4,
+     "notes": "The ad banner is visible from 35.2 to 36.9, so the crop must stop at y=1680. The Run bar ends at about y1673 and the black ad border starts at y≈1688. From 37.0 the textview2 panel header and chips are inside the crop but the property buttons are cut, which is acceptable. You can trim the 35.8-36.8 hover (it is static) or speed it up. Start at 34.6 instead if the palette scroll is not needed."
+    },
+    {
+     "name": "Select layout and browse properties",
+     "source_in": 21,
+     "source_out": 24.2,
+     "shows": "linear1 is selected (canvas fills teal). The property panel slides up and the user swipes the property strip through Margin, Orientation, Gravity, Layout gravity, Weight and Background, then back, and taps See All.",
+     "crop": {
+      "x": 0,
+      "y": 88,
+      "w": 864,
+      "h": 1730
+     },
+     "suggested_speed": 1.25,
+     "notes": "Do not start before 21.0: the ad banner is still on screen at 20.8-20.9 (the tap moment). From 21.0 the panel replaces the ad, so the crop can go down to y1818 and keep the property strip. A fading touch circle is visible at 21.0. Between 21.0 and 21.8 the panel is only half-revealed below the Run bar."
+    },
+    {
+     "name": "See All opens Edit Properties",
+     "source_in": 23.8,
+     "source_out": 26.2,
+     "shows": "Taps 'See All' on the property strip and the full Edit Properties screen for linear1 slides in (ID, Convert LinearLayout, Width/Height match_parent, Padding 8, Gravity none...).",
+     "crop": {
+      "x": 0,
+      "y": 88,
+      "w": 864,
+      "h": 1732
+     },
+     "suggested_speed": 1.6,
+     "notes": "There are about 1.0 s of dead time between the tap at 24.0 and the slide-in at 25.2, so speed it up or cut 24.3 to 25.1. The 25.4 frame has black rounded-corner artifacts; cut from 25.2 to 25.6, or skip that frame. No ad."
+    },
+    {
+     "name": "Swipe to Event tab, open onCreate",
+     "source_in": 37.6,
+     "source_out": 40,
+     "shows": "From the Design tab with the centred TextView, the user swipes to the Event tab, sees the onCreate 'On activity create' card and taps it. The blocks editor starts opening.",
+     "crop": {
+      "x": 0,
+      "y": 88,
+      "w": 864,
+      "h": 1592
+     },
+     "suggested_speed": 1.5,
+     "notes": "The ad banner is on screen from 38.0 onward, so keep y+h ≤1680. The Event tab's MainActivity.java/Run bar ends at about y1670. 39.2-39.9 is static waiting, so speed it up or cut. Continue past 40.0 for the editor slide-in (next range)."
+    }
+   ],
+   "key_moments": [
+    {
+     "t": 20.8,
+     "what": "Finger down on empty canvas (touch circle about x694,y1414 full-res). Exact seek shows it at 20.9."
+    },
+    {
+     "t": 21,
+     "what": "linear1 selected: canvas turns teal and the 'linear1' panel header replaces the ad banner"
+    },
+    {
+     "t": 22,
+     "what": "Property panel slides up fully: Custom attributes / Convert / Width / Height / Padding (exact 22.1)"
+    },
+    {
+     "t": 22.8,
+     "what": "Swiping the property strip left (finger on Margin)"
+    },
+    {
+     "t": 23.2,
+     "what": "Strip at end: Gravity, Layout gravity, Weight, Background resource, Background color"
+    },
+    {
+     "t": 23.6,
+     "what": "Strip back at start with the floating 'See All' chip"
+    },
+    {
+     "t": 24,
+     "what": "Tap on 'See All'"
+    },
+    {
+     "t": 25.2,
+     "what": "Edit Properties starts sliding in"
+    },
+    {
+     "t": 25.4,
+     "what": "Transition frame with black rounded-corner artifacts"
+    },
+    {
+     "t": 25.6,
+     "what": "Edit Properties (linear1) fully shown, top of list"
+    },
+    {
+     "t": 26.2,
+     "what": "Finger down to scroll the Edit Properties list"
+    },
+    {
+     "t": 27.2,
+     "what": "Scroll stops: Image Properties / Background resource / Background color in view"
+    },
+    {
+     "t": 28,
+     "what": "Finger lifted (touch circle gone)"
+    },
+    {
+     "t": 28.4,
+     "what": "Tap on the 'Gravity / none' row"
+    },
+    {
+     "t": 28.8,
+     "what": "Gravity dialog animating in (half-transparent)"
+    },
+    {
+     "t": 29,
+     "what": "Gravity dialog fully open, all boxes unchecked"
+    },
+    {
+     "t": 29.4,
+     "what": "Tap center_horizontal; checkbox animating to checked"
+    },
+    {
+     "t": 29.6,
+     "what": "center_horizontal fully checked"
+    },
+    {
+     "t": 29.8,
+     "what": "Tap center_vertical"
+    },
+    {
+     "t": 30,
+     "what": "center_vertical checked (both checked)"
+    },
+    {
+     "t": 30.4,
+     "what": "Tap 'Select'"
+    },
+    {
+     "t": 30.6,
+     "what": "Dialog fading out; status-bar icons briefly invisible"
+    },
+    {
+     "t": 30.8,
+     "what": "Gravity row reads 'center_horizontal, center_vertical'"
+    },
+    {
+     "t": 31,
+     "what": "Tap on system Back in the nav bar (highlight 31.0-31.4)"
+    },
+    {
+     "t": 32,
+     "what": "Edit Properties slides out (glitchy two-layer frames 32.0-32.4)"
+    },
+    {
+     "t": 32.6,
+     "what": "Design tab settled, linear1 still selected"
+    },
+    {
+     "t": 34,
+     "what": "Palette scroll in progress (exact start about 33.9)"
+    },
+    {
+     "t": 34.6,
+     "what": "Palette settled with the Widgets section (TextView, EditText...) visible"
+    },
+    {
+     "t": 35,
+     "what": "Long-press on 'TextView' in the palette"
+    },
+    {
+     "t": 35.2,
+     "what": "Drag starts: selection cleared, panel collapses, ad banner returns"
+    },
+    {
+     "t": 35.6,
+     "what": "Drag shadow over canvas centre; dashed blue drop-target outline on linear1"
+    },
+    {
+     "t": 37,
+     "what": "Drop: TextView appears centred in linear1, 'textview2' panel opens, ad hidden (exact drop 36.9)"
+    },
+    {
+     "t": 37.8,
+     "what": "Mid-swipe from Design to Event tab"
+    },
+    {
+     "t": 38,
+     "what": "Event tab shown (onCreate card); ad banner back"
+    },
+    {
+     "t": 38.6,
+     "what": "Tap on the 'onCreate / On activity create' card"
+    },
+    {
+     "t": 38.8,
+     "what": "Card in pressed (grey) state"
+    },
+    {
+     "t": 40,
+     "what": "Scrim plus logic editor 'onCreate' sliding in (continues in the next range)"
+    }
+   ]
+  },
+  {
+   "range": "40.0-60.0 s",
+   "events": [
+    {
+     "t_start": 40,
+     "t_end": 40.4,
+     "screen": "Transition: Event tab -> Logic editor (onCreate)",
+     "action": "The tap on the onCreate event (it happens just before 40.0) opens the blocks editor. From 40.0 the Event tab dims. The onCreate logic page slides in from the right with Android predictive-back style rounded corners. Checked frame by frame: 40.00 dim starts, about 40.05 the page enters from the right edge, about 40.25 the page is almost fully in, about 40.46 the toolbar icons appear.",
+     "visible_text": "Outgoing: \"NewProject\" \"601\" \"Design\" \"Event\" \"Component\" \"Strings\" \"onCreate\" \"On activity create\" \"MainActivity.java\" \"Run\". Incoming: \"onCreate\" \"On activity create\" with hat block \"On activity create\". There is a transient \"Now Loading\" label mid-page during the slide.",
+     "ad_banner_visible": true,
+     "overlays_or_glitches": "The test ad banner (\"Anúncio de teste\" / \"Nice job!\" / \"This is a 468x60 test ad.\") is visible on the outgoing screen at the left until about 40.3. Also: a transient \"Now Loading\" text, the half-dimmed outgoing page, rounded-corner page edges and a small back-gesture chevron at about 40.2.",
+     "promo_value": "low"
+    },
+    {
+     "t_start": 40.4,
+     "t_end": 41,
+     "screen": "Logic editor (onCreate), empty canvas",
+     "action": "Static, clean view of the blocks editor. The canvas holds only the orange hat block \"On activity create\". The puzzle-piece FAB sits at the bottom right. Toolbar icons (code <>, undo, redo, bookmark) are present from about 40.46.",
+     "visible_text": "\"onCreate\" \"On activity create\" (toolbar title/subtitle), block \"On activity create\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "Only the status bar (8:22, notification icons) and the nav bar. No touches.",
+     "promo_value": "medium"
+    },
+    {
+     "t_start": 41,
+     "t_end": 41.6,
+     "screen": "Logic editor - block palette opening",
+     "action": "Tap on the puzzle FAB (touch circle on the FAB at 41.0). The block palette slides up from the bottom (41.2 mid-slide). It is fully open at 41.4 and settles at 41.6. The palette opens on the Variable category, highlighted in orange.",
+     "visible_text": "Left: \"Add variable\" \"Add custom variable\" \"Remove variable\" \"Blocks\" \"Views\" \"View : binding.divider1\" \"LinearLayout : binding.linear1\". Right: \"Search…\" \"Variable\" \"List\" \"Control\" \"Operator\" \"Math\" \"File\" \"View\" \"Component\" \"XML Strings\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "Touch indicator circle on the FAB at 41.0",
+     "promo_value": "high"
+    },
+    {
+     "t_start": 41.6,
+     "t_end": 42.2,
+     "screen": "Logic editor - palette, Variable category",
+     "action": "Idle. The palette shows the Variable category.",
+     "visible_text": "\"Add variable\" \"Add custom variable\" \"Remove variable\" \"Blocks\" \"Views\" \"View : binding.divider1\" \"LinearLayout : binding.linear1\" plus the category list",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "none",
+     "promo_value": "low"
+    },
+    {
+     "t_start": 42.2,
+     "t_end": 42.6,
+     "screen": "Logic editor - palette, switch to Control",
+     "action": "Tap on \"Control\" (touch circle at 42.2). From about 42.37 the Control category is highlighted orange and its blocks fill the left pane.",
+     "visible_text": "\"repeat\" \"forever\" \"if [ ] then\" \"if [ ] then / else\"; categories \"Variable\" \"List\" \"Control\" \"Operator\" \"Math\" \"File\" \"View\" \"Component\" \"XML Strings\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "Touch indicator next to \"Control\" at 42.2-42.4",
+     "promo_value": "medium"
+    },
+    {
+     "t_start": 42.6,
+     "t_end": 43.2,
+     "screen": "Logic editor - palette, Control category",
+     "action": "Idle with the Control blocks shown.",
+     "visible_text": "\"repeat\" \"forever\" \"if then\" \"if then else\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "none",
+     "promo_value": "low"
+    },
+    {
+     "t_start": 43.2,
+     "t_end": 44.4,
+     "screen": "Logic editor - palette, Control category",
+     "action": "Small aimless drag in the palette. At 43.2 the finger lands in the empty block-pane area. 43.4-43.6: the Control block list is pushed up about 25 px and a scrollbar shows. 43.8-44.0: the finger slides along the category-list edge and the list snaps back to the top. 44.2: idle.",
+     "visible_text": "\"repeat\" \"forever\" \"if then\" \"else\"; category list unchanged (Control highlighted)",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "Touch indicator circles at 43.2, 43.6 and 43.8; thin grey scrollbars appear at 43.4-44.2",
+     "promo_value": "low"
+    },
+    {
+     "t_start": 44.4,
+     "t_end": 45.6,
+     "screen": "Logic editor - palette, tapping View (app lag)",
+     "action": "Tap on \"View\" in the category list (touch circle beside \"View\" at 44.4-44.7). The app does not respond for about 1 s: Control stays selected and nothing changes from 44.8 to 45.6. The View category only appears at about 45.67.",
+     "visible_text": "Same Control blocks; \"View\" not yet highlighted",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "Touch indicator at 44.4-44.6, then about 1 s of dead, frozen screen",
+     "promo_value": "unusable"
+    },
+    {
+     "t_start": 45.6,
+     "t_end": 46.2,
+     "screen": "Logic editor - palette, View category",
+     "action": "The View category is selected (purple highlight). Its blocks are shown at the top of the list.",
+     "visible_text": "\"View : ▾ setEnable\" \"getEnable\" \"setVisible visible :\" \"visibility of View : equals visible :\" \"setElevation\" \"setRotation\" \"getRotation\" \"setAlpha\"; category \"View\" highlighted",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "none",
+     "promo_value": "medium"
+    },
+    {
+     "t_start": 46.2,
+     "t_end": 49.6,
+     "screen": "Logic editor - palette, scrolling View blocks",
+     "action": "Several upward flicks scroll the View block list (finger on the right edge of the block pane, near the scrollbar). The list goes through translation, scale, location, size, child-view, gravity/colour, background and stroke blocks. At about 49.0 the dark \"Widgets\" header appears with TextView blocks. The list settles at 49.6 with \"Widgets\" near the top.",
+     "visible_text": "In order: \"setAlpha\" \"getAlpha\" \"setTranslationX\" \"getTranslationX\" \"setTranslationY\" \"getTranslationY\" \"setScaleX\" \"getScaleX\" \"setScaleY\" \"getScaleY\" \"getLocationX\" \"getLocationY\" \"getHeight\" \"getWidth\" \"request focus\" \"removeView View :\" \"removeAllViews\" \"addView View :\" \"getChildAt\" \"addView View : index\" \"setGravity Gravity Vertical : Gravity Horizontal :\" \"setColorFilter Color : with Porterduff Mode :\" \"setBackgroundColor Color :\" \"setBackgroundResource BackgroundImage :\" \"setBackgroundDrawable drawable :\" \"setStroke strokeColor Color : bgColor\" \"setCornerRadius color Color :\" \"setGradientBackground Color : and Color :\" \"setCornerRadius stroke strokeColor\" \"Widgets\" \"TextView : setText\" \"getText\" \"setTypeface font : with style typeface :\" \"setTextColor Color :\" \"setTextSize\" \"Function\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "Touch indicator circles at almost every frame (46.2, 46.6, 46.8, 47.2, 47.6, 48.0, 48.2, 48.6, 48.8, 49.2, 49.4); grey scrollbar visible",
+     "promo_value": "medium"
+    },
+    {
+     "t_start": 49.6,
+     "t_end": 50.2,
+     "screen": "Logic editor - palette, Widgets section",
+     "action": "The list is settled on the Widgets section. The finger rests near the scrollbar (touch circle at 49.6-49.8), then lifts at 50.0.",
+     "visible_text": "\"View : setCornerRadius stroke strokeColor\" \"Widgets\" \"TextView : ▾ setText\" \"TextView : ▾ getText\" \"TextView : ▾ setTypeface font : with style typeface :\" \"TextView : ▾ setTextColor Color :\" \"TextView : ▾ setTextSize\" \"Function\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "Touch indicator at 49.6-49.8",
+     "promo_value": "medium"
+    },
+    {
+     "t_start": 50.2,
+     "t_end": 51.2,
+     "screen": "Logic editor - dragging setText onto the canvas",
+     "action": "The finger presses the \"TextView : setText\" block in the palette at 50.2. At 50.4 the drag ghost lifts off over the \"Widgets\" header. The block is carried up as a grey placeholder (\"• • •\") through the canvas: about y 1265 at 50.6, y 950 at 50.8, y 870 at 51.0 (full-res). At 51.2 it is dropped, floating mid-canvas at about x 140-430, y 860-890, unattached. At the drop the undo arrow becomes enabled (dark).",
+     "visible_text": "Dropped block: \"TextView : ▾ setText [ ]\"; hat block \"On activity create\" still alone at the top",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "Touch indicator follows the finger. The dragged block is drawn as a grey \"• • •\" placeholder rather than the real block. A small red sliver appears at the left edge at 50.4.",
+     "promo_value": "high"
+    },
+    {
+     "t_start": 51.2,
+     "t_end": 51.6,
+     "screen": "Logic editor - floating setText block",
+     "action": "Idle. The free-floating setText block is on the canvas.",
+     "visible_text": "\"TextView : ▾ setText\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "A faint touch-release circle at 51.2",
+     "promo_value": "low"
+    },
+    {
+     "t_start": 51.6,
+     "t_end": 52.2,
+     "screen": "Logic editor -> Select widget dialog opening",
+     "action": "Tap on the block's \"TextView ▾\" dropdown (touch circle at 51.6-51.8). At 52.0 a scrim dims the screen and the \"Select widget\" dialog fades in. It is fully shown at 52.2.",
+     "visible_text": "\"Select widget\" \"Search\" \"TextView : textview2\" \"Code Editor\" \"Cancel\" \"Select\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "At 52.0 a ghost copy of the setText block is drawn over the Search field during the fade-in (glitch frame). Touch indicator at 51.6-51.8.",
+     "promo_value": "medium"
+    },
+    {
+     "t_start": 52.2,
+     "t_end": 52.8,
+     "screen": "Select widget dialog",
+     "action": "Dialog idle. The single option \"TextView : textview2\" is unselected.",
+     "visible_text": "\"Select widget\" \"Search\" \"TextView : textview2\" \"Code Editor\" \"Cancel\" \"Select\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "Grey scrim over the whole screen, including the status and nav bars",
+     "promo_value": "medium"
+    },
+    {
+     "t_start": 52.8,
+     "t_end": 53.8,
+     "screen": "Select widget dialog - choosing textview2",
+     "action": "Tap on \"TextView : textview2\" (touch circle at 52.8). The radio fills with a ripple at 53.0 and is checked purple at 53.2. Tap on \"Select\" at 53.6. The dialog closes at 53.8.",
+     "visible_text": "\"Select widget\" \"Search\" \"TextView : textview2\" (radio checked) \"Code Editor\" \"Cancel\" \"Select\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "Touch indicators at 52.8 and 53.6. At 53.8 the status-bar icons are faded (dialog-dismiss transition).",
+     "promo_value": "high"
+    },
+    {
+     "t_start": 53.8,
+     "t_end": 54.4,
+     "screen": "Logic editor - block now bound to textview2",
+     "action": "The floating block now names the widget. Idle.",
+     "visible_text": "\"TextView : textview2 ▾ setText [ ]\"; \"On activity create\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "none (status bar fades back in at 54.0)",
+     "promo_value": "medium"
+    },
+    {
+     "t_start": 54.4,
+     "t_end": 55.2,
+     "screen": "Logic editor - snapping setText into onCreate",
+     "action": "The finger picks up the floating block at 54.4 (grey \"• • •\" placeholder). The toolbar is replaced by a drag-action bar \"Delete | Duplicate | Collection\" at 54.6. At 54.8-55.0 the block hovers just under \"On activity create\" and a black insertion line appears under the hat block. It is dropped at 55.2 and snaps under the hat block. The normal toolbar returns.",
+     "visible_text": "\"Delete\" \"Duplicate\" \"Collection\"; after the drop: \"On activity create\" / \"TextView : textview2 ▾ setText [ ]\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "Touch indicator follows the finger. The action bar slides over the toolbar (half-overlapped at 54.6). The dragged block is a grey placeholder.",
+     "promo_value": "high"
+    },
+    {
+     "t_start": 55.2,
+     "t_end": 55.6,
+     "screen": "Logic editor - block attached",
+     "action": "Idle. setText is attached under the onCreate hat block.",
+     "visible_text": "\"On activity create\" \"TextView : textview2 ▾ setText [ ]\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "none",
+     "promo_value": "medium"
+    },
+    {
+     "t_start": 55.6,
+     "t_end": 56.2,
+     "screen": "Logic editor -> Enter string value dialog",
+     "action": "Tap on the white text slot of setText (touch circle at 55.6-55.7). At about 55.9 a green check \"Syntax OK\" bar appears under the toolbar and the blocks shift down about 25 px. At 56.0 the scrim and the \"Enter string value\" dialog fade in. It is fully shown at 56.2.",
+     "visible_text": "\"✓ Syntax OK\"; \"Enter string value\" [empty field] \"Code Editor\" \"Cancel\" \"Save\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "Touch indicator at 55.6. The scrim dims the status and nav bars.",
+     "promo_value": "high"
+    },
+    {
+     "t_start": 56.2,
+     "t_end": 57,
+     "screen": "Enter string value dialog",
+     "action": "Tap inside the text field at 56.4 (touch circle). The purple cursor appears and blinks (visible 56.4-56.8, off at 57.0).",
+     "visible_text": "\"Syntax OK\" \"Enter string value\" \"Code Editor\" \"Cancel\" \"Save\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "Touch indicator at 56.4",
+     "promo_value": "medium"
+    },
+    {
+     "t_start": 57,
+     "t_end": 57.4,
+     "screen": "Enter string value dialog - keyboard opening",
+     "action": "Gboard slides up from the bottom (57.2 mid-slide). The dialog moves up to about y 426-866 (full-res). The nav-bar back icon turns into the keyboard-dismiss ▼. The keyboard is fully up at 57.4.",
+     "visible_text": "Keyboard toolbar (apps grid, sticker, \"GIF\", settings gear, mic); keys \"q w e r t y u i o p\" with digits \"1-0\", \"a s d f g h j k l\", \"z x c v b n m\", \"?123\" \",\" emoji \".\" enter",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "System keyboard (Gboard) slides in; mid-slide frame at 57.2",
+     "promo_value": "medium"
+    },
+    {
+     "t_start": 57.4,
+     "t_end": 58.6,
+     "screen": "Enter string value dialog + keyboard",
+     "action": "Idle. The cursor blinks in the empty field. No typing yet.",
+     "visible_text": "\"Enter string value\" \"Code Editor\" \"Cancel\" \"Save\" + keyboard",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "System keyboard visible",
+     "promo_value": "low"
+    },
+    {
+     "t_start": 58.6,
+     "t_end": 59.6,
+     "screen": "Enter string value dialog - typing",
+     "action": "The user types a false-start text, not \"Olá mundo\": \"h\" at 58.8 (key-pop bubble on \"e\" shows the next key being pressed), \"he\" at 59.0, \"l\" key bubble at 59.2, \"hel\" at 59.4. The Gboard suggestion strip updates with each letter.",
+     "visible_text": "Field: \"h\" -> \"he\" -> \"hel\"; suggestions \"he | Henrique | Jé\" then \"hel | Helena | Hellen\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "Gboard key-pop bubbles (\"e\" at 58.8, \"l\" at 59.2); touch indicators on keys",
+     "promo_value": "low"
+    },
+    {
+     "t_start": 59.6,
+     "t_end": 60,
+     "screen": "Enter string value dialog - deleting",
+     "action": "Finger on backspace at 59.8. The text is erased: \"hel\" -> \"h\" at 60.0 (suggestions \"h | hoje | já\"). It is fully empty at 60.2, just after the range. The user is deleting the false start.",
+     "visible_text": "Field \"hel\" -> \"h\"; suggestions \"hel | Helena | Hellen\" -> \"h | hoje | já\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "Touch indicator on the backspace key",
+     "promo_value": "unusable"
+    }
+   ],
+   "best_clips": [
+    {
+     "name": "Abrir a paleta de blocos no onCreate",
+     "source_in": 40.5,
+     "source_out": 41.7,
+     "shows": "The clean onCreate blocks editor (only the \"On activity create\" hat block), a tap on the puzzle FAB and the categorised block palette sliding up (Variable, List, Control, Operator, Math, File, View, Component, XML Strings).",
+     "crop": {
+      "x": 0,
+      "y": 88,
+      "w": 864,
+      "h": 1728
+     },
+     "suggested_speed": 1,
+     "notes": "Start at 40.5 or later: before about 40.35 the outgoing Event screen with the test-ad banner and a \"Now Loading\" label is still on screen. The crop removes the status bar (y<80) and the nav bar (y>1816). For a strict 9:16 frame the palette (y 1310-1816) and the toolbar (y 100-200) do not both fit, so letterbox or pad instead."
+    },
+    {
+     "name": "Trocar categoria: Control",
+     "source_in": 42,
+     "source_out": 42.7,
+     "shows": "A tap on \"Control\" in the category list; the palette swaps to the orange repeat / forever / if-then / if-then-else blocks.",
+     "crop": {
+      "x": 0,
+      "y": 1150,
+      "w": 864,
+      "h": 666
+     },
+     "suggested_speed": 1,
+     "notes": "A tight crop on the palette and FAB. For the View category, jump-cut 44.3-44.8 (the tap) to 45.5-46.2 (the result). The app froze for about 1 s in between (44.8-45.6), so never use that span."
+    },
+    {
+     "name": "Rolar blocos View até Widgets",
+     "source_in": 46.1,
+     "source_out": 49.8,
+     "shows": "A fast scroll through the long list of purple View blocks (setTranslation, setScale, addView, setGravity, setBackgroundColor, setStroke, setCornerRadius...), ending on the \"Widgets\" header with \"TextView : setText\".",
+     "crop": {
+      "x": 0,
+      "y": 1296,
+      "w": 864,
+      "h": 520
+     },
+     "suggested_speed": 2,
+     "notes": "Shows how many blocks the app offers. Touch circles are visible on most frames at the right edge of the block pane. A wider 9:16 alternative is x0 y280 w864 h1536, which keeps the empty canvas above."
+    },
+    {
+     "name": "Arrastar o bloco setText para o canvas",
+     "source_in": 50,
+     "source_out": 51.4,
+     "shows": "The finger grabs \"TextView : setText\" from the Widgets section of the palette and drags it up. It drops onto the canvas as a floating block, and the undo button lights up.",
+     "crop": {
+      "x": 0,
+      "y": 88,
+      "w": 864,
+      "h": 1536
+     },
+     "suggested_speed": 1,
+     "notes": "The 9:16 crop covers y 88-1624: it includes the palette row where the drag starts (setText at y≈1484) and the drop point (y≈876). While being dragged the block renders as a grey \"• • •\" placeholder, which is normal app behaviour. A tiny red sliver shows at the far left at 50.4."
+    },
+    {
+     "name": "Selecionar widget TextView : textview2",
+     "source_in": 51.5,
+     "source_out": 53.9,
+     "shows": "A tap on the block's dropdown opens the \"Select widget\" dialog. The user picks \"TextView : textview2\" and taps Select; the block now reads \"TextView : textview2 ▾ setText\".",
+     "crop": {
+      "x": 0,
+      "y": 88,
+      "w": 864,
+      "h": 1536
+     },
+     "suggested_speed": 1.5,
+     "notes": "Avoid the 52.0 frame: a ghost setText block overlaps the Search field during the fade-in. Optionally trim the idle 52.2-52.7. The dialog sits at x 60-804, y 684-1220; a tighter alternative crop is x0 y560 w864 h780."
+    },
+    {
+     "name": "Encaixar setText dentro do onCreate",
+     "source_in": 54.2,
+     "source_out": 55.4,
+     "shows": "The block is dragged up (a \"Delete / Duplicate / Collection\" bar replaces the toolbar), hovers with the black insertion marker and snaps under \"On activity create\".",
+     "crop": {
+      "x": 0,
+      "y": 88,
+      "w": 864,
+      "h": 1536
+     },
+     "suggested_speed": 1,
+     "notes": "The best 'puzzle-snap' moment. All the action happens between y 100 and 900, so a tighter crop such as x0 y88 w864 h960 also works for a zoomed-in shot."
+    },
+    {
+     "name": "Syntax OK + diálogo de texto",
+     "source_in": 55.5,
+     "source_out": 56.5,
+     "shows": "A tap on the setText string slot. The green \"✓ Syntax OK\" appears and the \"Enter string value\" dialog opens, with a cursor in the field at 56.4.",
+     "crop": {
+      "x": 0,
+      "y": 88,
+      "w": 864,
+      "h": 1536
+     },
+     "suggested_speed": 1,
+     "notes": "\"Syntax OK\" appears at about 55.9 (y≈230). Pair it with the later real typing of \"Olá mundo\" (after 60 s); the typing inside this range is a false start (\"hel\" then deleted)."
+    },
+    {
+     "name": "Fluxo contínuo: arrastar, escolher widget, encaixar",
+     "source_in": 50,
+     "source_out": 56.3,
+     "shows": "One continuous take from grabbing setText to the Syntax OK and string dialog: drag to canvas, Select widget -> textview2, snap into onCreate, Syntax OK.",
+     "crop": {
+      "x": 0,
+      "y": 88,
+      "w": 864,
+      "h": 1536
+     },
+     "suggested_speed": 1.6,
+     "notes": "About 3.9 s at 1.6x. Cut or speed through the idle gaps 51.2-51.6, 52.2-52.7 and 53.9-54.3. The scrim from the dialogs also dims the status and nav bars, but both are outside the crop."
+    }
+   ],
+   "key_moments": [
+    {
+     "t": 40,
+     "what": "Event tab starts dimming; the onCreate logic page begins sliding in from the right (frame-accurate about 40.00-40.05); the test-ad banner is still visible on the outgoing page"
+    },
+    {
+     "t": 40.4,
+     "what": "Logic editor fully in; toolbar icons (<>, undo, redo, bookmark) appear at about 40.46. First fully clean frame (no ad)"
+    },
+    {
+     "t": 41,
+     "what": "Finger down on the puzzle FAB (touch circle); palette starts sliding up"
+    },
+    {
+     "t": 41.4,
+     "what": "Block palette fully open on the Variable category"
+    },
+    {
+     "t": 42.2,
+     "what": "Tap on \"Control\" (touch circle)"
+    },
+    {
+     "t": 42.4,
+     "what": "Control category shown (switch at about 42.37): repeat / forever / if then / if then else"
+    },
+    {
+     "t": 43.2,
+     "what": "Finger down in the palette block area; small drag/scroll of the Control list (to 44.0)"
+    },
+    {
+     "t": 44.4,
+     "what": "Tap on \"View\" (touch circle 44.4-44.7); the app lags"
+    },
+    {
+     "t": 45.6,
+     "what": "View category finally displayed (pts about 45.67): setEnable, getEnable, setVisible..."
+    },
+    {
+     "t": 46.2,
+     "what": "First flick scrolling the View block list"
+    },
+    {
+     "t": 49,
+     "what": "\"Widgets\" header with \"TextView : setText\" scrolls into view"
+    },
+    {
+     "t": 49.6,
+     "what": "List settles with the Widgets section near the top"
+    },
+    {
+     "t": 50.2,
+     "what": "Finger down on the \"TextView : setText\" palette block"
+    },
+    {
+     "t": 50.4,
+     "what": "Drag ghost lifts off the palette"
+    },
+    {
+     "t": 51.2,
+     "what": "setText dropped floating on the canvas; undo becomes enabled"
+    },
+    {
+     "t": 51.6,
+     "what": "Tap on the block's TextView ▾ dropdown"
+    },
+    {
+     "t": 52,
+     "what": "\"Select widget\" dialog fading in (ghost-block glitch frame)"
+    },
+    {
+     "t": 52.2,
+     "what": "\"Select widget\" dialog fully visible"
+    },
+    {
+     "t": 52.8,
+     "what": "Tap on \"TextView : textview2\""
+    },
+    {
+     "t": 53.2,
+     "what": "Radio for textview2 checked"
+    },
+    {
+     "t": 53.6,
+     "what": "Tap on \"Select\""
+    },
+    {
+     "t": 53.8,
+     "what": "Dialog closed; block reads \"TextView : textview2 ▾ setText\""
+    },
+    {
+     "t": 54.4,
+     "what": "Finger picks up the floating block"
+    },
+    {
+     "t": 54.6,
+     "what": "\"Delete | Duplicate | Collection\" drag bar replaces the toolbar"
+    },
+    {
+     "t": 54.8,
+     "what": "Black insertion marker under \"On activity create\""
+    },
+    {
+     "t": 55.2,
+     "what": "Block snapped into onCreate; toolbar restored"
+    },
+    {
+     "t": 55.6,
+     "what": "Tap on setText's white string slot"
+    },
+    {
+     "t": 55.9,
+     "what": "\"✓ Syntax OK\" appears; blocks shift down (frame-accurate about 55.905)"
+    },
+    {
+     "t": 56,
+     "what": "\"Enter string value\" dialog fading in"
+    },
+    {
+     "t": 56.2,
+     "what": "\"Enter string value\" dialog fully visible"
+    },
+    {
+     "t": 56.4,
+     "what": "Tap in the text field; cursor appears"
+    },
+    {
+     "t": 57,
+     "what": "Keyboard starts sliding up"
+    },
+    {
+     "t": 57.4,
+     "what": "Keyboard fully up; dialog repositioned at the top"
+    },
+    {
+     "t": 58.8,
+     "what": "\"h\" typed (key-pop on \"e\")"
+    },
+    {
+     "t": 59,
+     "what": "\"he\" typed; suggestions \"he | Henrique | Jé\""
+    },
+    {
+     "t": 59.4,
+     "what": "\"hel\" typed; suggestions \"hel | Helena | Hellen\""
+    },
+    {
+     "t": 59.8,
+     "what": "Finger on backspace"
+    },
+    {
+     "t": 60,
+     "what": "Text reduced to \"h\" (empty at 60.2): the false start is deleted"
+    }
+   ]
+  },
+  {
+   "range": "60.0-80.0 s",
+   "events": [
+    {
+     "t_start": 60,
+     "t_end": 60.8,
+     "screen": "Logic editor (onCreate) with 'Enter string value' dialog and soft keyboard",
+     "action": "Clearing a stray first character: field holds 'h' at 60.0, backspace is tapped and the field is empty from 60.2 through 60.6. Keyboard suggestion strip changes from 'h | hoje | já' to its toolbar (sticker, GIF, settings).",
+     "visible_text": "\"onCreate\" / \"On activity create\"; \"Syntax OK\"; blocks \"On activity create\" + \"TextView : textview2 ▼ setText [ ]\"; dialog \"Enter string value\", buttons \"Code Editor\", \"Cancel\", \"Save\"; suggestions \"h\" \"hoje\" \"já\" (60.0)",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "Show-touches dot on the backspace key at 60.0-60.2; grey dim scrim behind dialog; system nav bar at bottom",
+     "promo_value": "low"
+    },
+    {
+     "t_start": 60.8,
+     "t_end": 61.8,
+     "screen": "Logic editor (onCreate) with 'Enter string value' dialog and soft keyboard",
+     "action": "Typing the first word: 'o' key popup at 60.8, field 'o' at 61.0, 'ol' with 'a' key popup at 61.2, space tapped and keyboard autocorrects to 'Olá ' (highlighted composing text) at 61.4; highlight still present at 61.6, plain 'Olá ' at 61.8.",
+     "visible_text": "Field: \"o\" (61.0), \"ol\" (61.2), \"Olá\" (61.4-61.8); suggestions \"o | ó | ok\" (61.0), \"ol | ok | 🆗 | 🙂\" (61.2), \"ola | Olá | olá\" (61.4), \"bom | boa | 👋\" (61.6-61.8)",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "Key-press popups ('o', 'a'); show-touches dots on keys/space bar",
+     "promo_value": "high"
+    },
+    {
+     "t_start": 61.8,
+     "t_end": 64,
+     "screen": "Logic editor (onCreate) with 'Enter string value' dialog and soft keyboard",
+     "action": "Typing 'mundo' letter by letter: 'Olá m' from 62.0 (unchanged until 62.6, 'u' popup at 62.6), 'Olá mu' at 62.8-63.0 ('n' tapped at 63.0), 'Olá mun' at 63.2 ('d' popup), 'Olá mund' at 63.4, 'Olá mundo' complete at 63.6 (cursor blinks; no cursor at 64.0).",
+     "visible_text": "Field: \"Olá m\" (62.0-62.6), \"Olá mu\" (62.8-63.0), \"Olá mun\" (63.2), \"Olá mund\" (63.4), \"Olá mundo\" (63.6+); suggestions \"m | meu | minha\", \"mu | meu | muito\", \"mun | min | minha\", \"mund | mundo | mundial\", \"mundo | mundial | mundos\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "Key-press popups ('u' 62.6, 'd' 63.2); show-touches dots on keys",
+     "promo_value": "high"
+    },
+    {
+     "t_start": 64,
+     "t_end": 64.6,
+     "screen": "Logic editor (onCreate) with 'Enter string value' dialog and soft keyboard",
+     "action": "Short pause with 'Olá mundo' in the field, then the user taps 'Save' (touch dot just under 'Save' at 64.4).",
+     "visible_text": "\"Enter string value\"; field \"Olá mundo\"; \"Code Editor\" \"Cancel\" \"Save\"; suggestions \"mundo | mundial | mundos\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "Show-touches dot under Save at 64.4",
+     "promo_value": "high"
+    },
+    {
+     "t_start": 64.6,
+     "t_end": 65.8,
+     "screen": "Logic editor (onCreate) with block palette open (View category)",
+     "action": "Dialog fades out at 64.6 (keyboard already gone) and the setText block now carries the value: 'TextView : textview2 ▼ setText [Olá mundo]'. Block palette is visible at the bottom (View category selected). Clean from 64.8 to 65.4; system Back pressed at 65.6.",
+     "visible_text": "\"Syntax OK\"; \"On activity create\"; \"TextView : textview2\" \"setText\" \"Olá mundo\"; palette blocks \"View : setCornerRadius stroke strokeColor\", \"Widgets\", \"TextView : setText\", \"TextView : getText\", \"TextView : setTypeface font : with style typeface :\", \"TextView : setTextColor Color :\", \"TextView : setTextSize\", \"Function\"; categories \"Search...\", \"Variable\", \"List\", \"Control\", \"Operator\", \"Math\", \"File\", \"View\", \"Component\", \"XML Strings\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "64.6: semi-transparent fading dialog + touch dot; 65.6: nav-bar Back key highlighted (ripple) with touch dot",
+     "promo_value": "high"
+    },
+    {
+     "t_start": 65.8,
+     "t_end": 66.8,
+     "screen": "Logic editor (onCreate), palette closed",
+     "action": "Palette slides down (65.8, partially visible strip) and is gone at 66.0, leaving a clean canvas with only the finished block 'On activity create' -> 'TextView : textview2 setText Olá mundo'. Second system Back press at 66.6.",
+     "visible_text": "\"onCreate\" / \"On activity create\"; \"Syntax OK\"; \"On activity create\"; \"TextView : textview2 ▼ setText Olá mundo\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "65.8 half-closed palette strip at the bottom; nav-bar Back key highlight at 65.8 and 66.6",
+     "promo_value": "high"
+    },
+    {
+     "t_start": 66.8,
+     "t_end": 67.4,
+     "screen": "Logic editor (onCreate) with 'Now Loading' overlay",
+     "action": "Grey loading overlay while leaving the editor: white dots spinner + 'Now Loading' (66.8-67.0), Sketchware logo animation fading out with a light-grey strip across the bottom (67.2); overlay gone, clean editor again at 67.4.",
+     "visible_text": "\"Now Loading\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "Grey scrim; 67.2 pale grey rectangle at bottom edge (incoming ad area) - glitchy",
+     "promo_value": "low"
+    },
+    {
+     "t_start": 67.4,
+     "t_end": 67.8,
+     "screen": "Activity transition: Logic editor -> NewProject Event tab",
+     "action": "Back slide transition: at 67.6 the logic editor slides off to the right revealing the dimmed project screen (Event tab) underneath; settled at 67.8.",
+     "visible_text": "Left: \"NewProject\" \"601\" \"Design\" \"Event\" \"Component\" \"onCreate\" \"MainActivity.java\"; right: \"onCreate\" \"Syntax OK\" \"On activity create\"",
+     "ad_banner_visible": true,
+     "overlays_or_glitches": "Test ad banner at bottom-left of the revealed screen (\"Anúncio de teste\", \"This is a 320x50 test\")",
+     "promo_value": "low"
+    },
+    {
+     "t_start": 67.8,
+     "t_end": 68.4,
+     "screen": "Event tab (NewProject)",
+     "action": "Event tab at rest showing the onCreate event card; no interaction.",
+     "visible_text": "\"NewProject\" \"601\"; tabs \"Design\" \"Event\" \"Component\" \"Strings\"; \"onCreate\" \"On activity create\"; side rail \"Activity\" \"View\" \"Component\" \"Drawer\" \"Moreblock\"; \"MainActivity.java\" \"Run\"; ad \"Anúncio de teste\" \"Nice job!\" \"This is a 320x50 test ad.\"",
+     "ad_banner_visible": true,
+     "overlays_or_glitches": "Test ad banner at bottom",
+     "promo_value": "medium"
+    },
+    {
+     "t_start": 68.4,
+     "t_end": 68.8,
+     "screen": "Event tab -> Design tab (swipe)",
+     "action": "Swipe right between tabs: Design canvas (toolbar '1:37') peeks in from the left at 68.4-68.6; Design tab fully shown at 68.8 (toolbar now also shows undo/redo icons).",
+     "visible_text": "\"1:37\"; \"Activity\" \"View\" \"Component\" \"Drawer\" \"Moreblock\"; \"onCreate\"",
+     "ad_banner_visible": true,
+     "overlays_or_glitches": "Touch dot mid-screen at 68.4; test ad banner",
+     "promo_value": "low"
+    },
+    {
+     "t_start": 68.8,
+     "t_end": 71.6,
+     "screen": "Design tab (NewProject)",
+     "action": "Design tab idle: widget palette on the left, phone preview with the TextView centered. A tap on the TextView at 70.0 produces no visible change; nothing else happens until 71.6.",
+     "visible_text": "\"Create a widget\"; \"AndroidX\": \"TabLayout\" \"BottomNavigationView\" \"CollapsingToolbar\" \"CardView\" \"TextInputLayout\" \"SwipeRefreshLayout\" \"ConstraintLayout\" \"NestedScrollView\" \"MaterialCardView\"; \"Widgets\": \"TextView\" \"EditText\" \"AutoCompleteTextView\" \"MultiAutoCompleteTextView\" \"Button\" \"MaterialButton\" \"ImageView\"; preview \"main.xml\" \"Toolbar\" \"1:37\" \"TextView\"; bottom \"main.xml\" \"Run\"",
+     "ad_banner_visible": true,
+     "overlays_or_glitches": "Test ad banner; touch dot on the TextView at 70.0",
+     "promo_value": "medium"
+    },
+    {
+     "t_start": 71.6,
+     "t_end": 73.2,
+     "screen": "Design tab with textview2 selected + property quick-panel",
+     "action": "TextView tapped and selected (teal highlight) at 71.6; the bottom property panel slides up over the Run bar and ad (fully up at 71.8) and stays static until 73.0.",
+     "visible_text": "Panel: \"textview2\" ▼, delete and save icons, chips \"Basic\" \"Recent\" \"Event\", icon tiles (<> code, convert, ↔ width, ↕ height, \"...\"); canvas \"TextView\" highlighted; \"main.xml\" \"Toolbar\" \"1:37\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "Touch dot on TextView at 71.8; at 71.6 panel still sliding (Run bar edge peeking)",
+     "promo_value": "high"
+    },
+    {
+     "t_start": 73.2,
+     "t_end": 73.8,
+     "screen": "Design tab -> Event tab (swipe)",
+     "action": "Swipe left to the Event tab: at 73.2 the Design page shifts left and the property panel shows its labels; at 73.4 Event tab is sliding in (ad back); settled around 73.6-73.8.",
+     "visible_text": "73.2 panel labels \"Custom attributes\" \"Convert\" \"Width\" \"Heigh[t]\" \"See All\"; Event: \"onCreate\" \"On activity create\" \"Activity\" \"View\" \"Component\" \"Drawer\" \"Moreblock\" \"MainActivity.java\" \"Run\"",
+     "ad_banner_visible": true,
+     "overlays_or_glitches": "Touch dots during swipe; ad banner from 73.4",
+     "promo_value": "medium"
+    },
+    {
+     "t_start": 73.8,
+     "t_end": 74.2,
+     "screen": "Event tab (NewProject)",
+     "action": "Event tab at rest.",
+     "visible_text": "\"onCreate\" \"On activity create\"; \"Activity\" \"View\" \"Component\" \"Drawer\" \"Moreblock\"; \"MainActivity.java\" \"Run\"",
+     "ad_banner_visible": true,
+     "overlays_or_glitches": "Test ad banner",
+     "promo_value": "medium"
+    },
+    {
+     "t_start": 74.2,
+     "t_end": 75,
+     "screen": "Event tab -> Component tab (swipe)",
+     "action": "Swipe left: Event content slides out at 74.2, Component tab arrives at 74.4 and is settled by 74.6-74.8 (empty state); next swipe begins.",
+     "visible_text": "\"Component\" (tab active); \"No components to display\"; \"MainActivity.java\" \"Run\"",
+     "ad_banner_visible": true,
+     "overlays_or_glitches": "Touch dots (74.2, 74.8); test ad banner",
+     "promo_value": "medium"
+    },
+    {
+     "t_start": 75,
+     "t_end": 75.8,
+     "screen": "Strings tab",
+     "action": "Strings tab slides in at 75.0, settled at 75.2, showing the top of the string resources list; bottom file selector switches to strings.xml.",
+     "visible_text": "\"textview1_text\" \"TextView\"; \"edittext1_hint\" \"Edit Text\"; \"button1_text\" \"Button\"; \"textview2_text\" \"TextView\"; \"edittext2_hint\" \"Edit Text\"; \"button2_text\" \"Button\"; \"textview3_text\"; \"edittext3_hint\"; \"button3_text\"; \"strings.xml\" \"Run\"",
+     "ad_banner_visible": true,
+     "overlays_or_glitches": "Touch dot at 75.0; test ad banner",
+     "promo_value": "medium"
+    },
+    {
+     "t_start": 75.8,
+     "t_end": 77,
+     "screen": "Strings tab (scrolling)",
+     "action": "Flick down to the end of the list (75.8 -> bottom at 76.0-76.4) then flick back up (76.6) to the top with overscroll stretch at 76.8; settled at top 77.0.",
+     "visible_text": "\"materialbutton1_text\" \"MaterialButton\"; \"textview4_text\"; \"button4_text\"; \"checkbox1_text\" \"CheckBox\"; \"button5_text\"; \"textview5_text\"",
+     "ad_banner_visible": true,
+     "overlays_or_glitches": "Touch dots; overscroll stretch at 76.8; test ad banner",
+     "promo_value": "medium"
+    },
+    {
+     "t_start": 77,
+     "t_end": 78.4,
+     "screen": "Strings tab (scrolling)",
+     "action": "Scroll down again (77.2 edittext1_hint at top, 77.4 button1_text, 77.6) ending with 'textview2_text' at the top at 77.8; static until 78.4.",
+     "visible_text": "\"textview2_text\" \"edittext2_hint\" \"button2_text\" \"textview3_text\" \"edittext3_hint\" \"button3_text\" \"materialbutton1_text\" \"textview4_text\" \"button4_text\"; \"strings.xml\" \"Run\"",
+     "ad_banner_visible": true,
+     "overlays_or_glitches": "Touch dots; test ad banner",
+     "promo_value": "medium"
+    },
+    {
+     "t_start": 78.4,
+     "t_end": 79.4,
+     "screen": "Strings tab - build started",
+     "action": "User taps 'Run' at 78.4; at 78.6 the Run button turns into a pink 'Stop' button, a progress strip appears above the bottom bar with 'Deleting temporary files...' (bar barely filled), FAB '+' moves up.",
+     "visible_text": "\"Run\" (78.4) -> \"Stop\" (78.6+); \"Deleting temporary files...\"; \"strings.xml\"",
+     "ad_banner_visible": true,
+     "overlays_or_glitches": "Touch dot on Run/Stop; touch dot at 79.2; test ad banner",
+     "promo_value": "medium"
+    },
+    {
+     "t_start": 79.4,
+     "t_end": 80,
+     "screen": "Strings -> Component -> Event tab (swipe) during build",
+     "action": "Swipe right while building: Component tab slides in at 79.4 (file selector switches to MainActivity.java), at rest 79.6, swiping on toward Event at 79.8; Event tab at 80.0. Progress strip 'Deleting temporary files...' persists.",
+     "visible_text": "\"No components to display\"; \"Deleting temporary files...\"; \"MainActivity.java\" \"Stop\"; 80.0 \"onCreate\" \"On activity create\"",
+     "ad_banner_visible": true,
+     "overlays_or_glitches": "Touch dots; test ad banner",
+     "promo_value": "low"
+    }
+   ],
+   "best_clips": [
+    {
+     "name": "Typing 'Olá mundo' in Enter string value",
+     "source_in": 60.8,
+     "source_out": 64.6,
+     "shows": "Dialog 'Enter string value' over the onCreate logic editor; 'o','l','a' + autocorrect to 'Olá', then 'mundo' typed letter by letter, ending with the tap on Save",
+     "crop": {
+      "x": 0,
+      "y": 96,
+      "w": 864,
+      "h": 1720
+     },
+     "suggested_speed": 1.5,
+     "notes": "No ad banner in this stretch. Crop removes status bar (clock/notification icons) and nav bar. Tighter alternative focusing on block + dialog only (drops keyboard): {x:0,y:200,w:864,h:700}. Key-press popups and show-touches dots are visible on the keyboard. Start at 60.8 to skip the deleted 'h' typo at 60.0-60.6."
+    },
+    {
+     "name": "Save -> block now reads setText 'Olá mundo'",
+     "source_in": 64.3,
+     "source_out": 66.5,
+     "shows": "Save tapped, dialog fades, block 'TextView : textview2 setText Olá mundo' under 'On activity create' with 'Syntax OK'; palette closes leaving the finished program",
+     "crop": {
+      "x": 0,
+      "y": 96,
+      "w": 864,
+      "h": 1720
+     },
+     "suggested_speed": 1,
+     "notes": "No ad. Crop excludes the nav bar, which hides the Back-key highlights at 65.6 and 65.8. Clean hold frames 64.8-65.4 (with palette) and 66.0-66.4 (empty canvas, block only). For a hero close-up of the result use {x:0,y:180,w:864,h:486} at 66.0-66.4 (full-res still t_067.jpg is perfectly clean). Out before 66.6 (second Back press -> 'Now Loading')."
+    },
+    {
+     "name": "Select textview2 - property panel (ad-free Design tab)",
+     "source_in": 71.5,
+     "source_out": 73.1,
+     "shows": "Design tab: TextView in the phone preview gets selected (teal) and the 'textview2' property panel (Basic / Recent / Event, code/convert/width/height tiles) slides up",
+     "crop": {
+      "x": 0,
+      "y": 96,
+      "w": 864,
+      "h": 1724
+     },
+     "suggested_speed": 1,
+     "notes": "The property panel covers the test-ad area from 71.6 to 73.2, so this is the only Design-tab stretch in the range without the banner. Static 71.8-73.0; can be held or used as a still. Before 71.6 the ad is visible (use the y 96-1676 crop if starting earlier)."
+    },
+    {
+     "name": "Tab tour Event -> Component -> Strings",
+     "source_in": 73.6,
+     "source_out": 75.6,
+     "shows": "Quick swipes through the Event tab (onCreate), Component tab ('No components to display') and Strings tab (string resource list)",
+     "crop": {
+      "x": 0,
+      "y": 96,
+      "w": 864,
+      "h": 1580
+     },
+     "suggested_speed": 1.5,
+     "notes": "Ad banner is present in the source (y ~1686-1818 full-res); crop ends at y=1676 to keep the bottom file selector/Run bar while excluding the banner and nav bar."
+    },
+    {
+     "name": "Strings tab scroll",
+     "source_in": 75.2,
+     "source_out": 77,
+     "shows": "strings.xml resource list (textview1_text ... textview5_text, checkbox1_text, materialbutton1_text) scrolled to the bottom and back",
+     "crop": {
+      "x": 0,
+      "y": 96,
+      "w": 864,
+      "h": 1580
+     },
+     "suggested_speed": 2,
+     "notes": "Ad banner below the crop. Flick scroll is fast; 2x keeps it short but readable at hold points 75.2 and 76.0-76.4."
+    },
+    {
+     "name": "Press Run - build starts",
+     "source_in": 78,
+     "source_out": 79.3,
+     "shows": "Tap on 'Run' in the Strings tab; button flips to pink 'Stop' and the progress strip 'Deleting temporary files...' appears",
+     "crop": {
+      "x": 0,
+      "y": 96,
+      "w": 864,
+      "h": 1580
+     },
+     "suggested_speed": 1,
+     "notes": "Run/Stop button sits at y ~1584-1668 full-res, inside the crop; ad banner (y >= ~1686) excluded. Good bridge into the build-progress footage that follows after 80 s."
+    }
+   ],
+   "key_moments": [
+    {
+     "t": 60,
+     "what": "Field shows stray 'h'; backspace being tapped"
+    },
+    {
+     "t": 60.2,
+     "what": "Field empty (cursor only)"
+    },
+    {
+     "t": 60.8,
+     "what": "'o' key popup - typing starts"
+    },
+    {
+     "t": 61,
+     "what": "Field 'o'"
+    },
+    {
+     "t": 61.2,
+     "what": "Field 'ol', 'a' key popup"
+    },
+    {
+     "t": 61.4,
+     "what": "Space tapped, autocorrect -> 'Olá' (highlighted), suggestions 'ola | Olá | olá'"
+    },
+    {
+     "t": 61.8,
+     "what": "Field 'Olá ' plain, next-word suggestions 'bom | boa | 👋'"
+    },
+    {
+     "t": 62,
+     "what": "Field 'Olá m'"
+    },
+    {
+     "t": 62.6,
+     "what": "'u' key popup"
+    },
+    {
+     "t": 62.8,
+     "what": "Field 'Olá mu'"
+    },
+    {
+     "t": 63.2,
+     "what": "Field 'Olá mun', 'd' key popup"
+    },
+    {
+     "t": 63.4,
+     "what": "Field 'Olá mund'"
+    },
+    {
+     "t": 63.6,
+     "what": "Field 'Olá mundo' complete"
+    },
+    {
+     "t": 64.4,
+     "what": "Tap on 'Save'"
+    },
+    {
+     "t": 64.6,
+     "what": "Dialog fades, keyboard gone, block shows 'setText Olá mundo', palette visible"
+    },
+    {
+     "t": 64.8,
+     "what": "First fully clean frame of finished block + palette"
+    },
+    {
+     "t": 65.6,
+     "what": "System Back pressed (nav bar highlight)"
+    },
+    {
+     "t": 65.8,
+     "what": "Palette collapsing"
+    },
+    {
+     "t": 66,
+     "what": "Clean canvas with only the finished block"
+    },
+    {
+     "t": 66.6,
+     "what": "Second Back press"
+    },
+    {
+     "t": 66.8,
+     "what": "'Now Loading' grey overlay appears"
+    },
+    {
+     "t": 67.2,
+     "what": "Sketchware logo animation, grey strip at bottom"
+    },
+    {
+     "t": 67.4,
+     "what": "Overlay gone"
+    },
+    {
+     "t": 67.6,
+     "what": "Slide transition back to project screen (ad visible)"
+    },
+    {
+     "t": 67.8,
+     "what": "Event tab settled"
+    },
+    {
+     "t": 68.4,
+     "what": "Swipe right toward Design tab begins"
+    },
+    {
+     "t": 68.8,
+     "what": "Design tab shown"
+    },
+    {
+     "t": 70,
+     "what": "Tap on TextView in preview (no visible effect)"
+    },
+    {
+     "t": 71.6,
+     "what": "textview2 selected, property panel slides up (ad hidden)"
+    },
+    {
+     "t": 71.8,
+     "what": "Property panel fully up: 'textview2', 'Basic' 'Recent' 'Event'"
+    },
+    {
+     "t": 73.2,
+     "what": "Swipe left begins; panel labels 'Custom attributes' 'Convert' 'Width' 'See All' visible"
+    },
+    {
+     "t": 73.4,
+     "what": "Event tab sliding in, ad banner back"
+    },
+    {
+     "t": 74.2,
+     "what": "Swipe toward Component tab"
+    },
+    {
+     "t": 74.4,
+     "what": "Component tab: 'No components to display'"
+    },
+    {
+     "t": 75,
+     "what": "Strings tab slides in"
+    },
+    {
+     "t": 75.2,
+     "what": "Strings tab settled at top of list"
+    },
+    {
+     "t": 75.8,
+     "what": "Scroll down starts"
+    },
+    {
+     "t": 76,
+     "what": "Bottom of list ('textview5_text')"
+    },
+    {
+     "t": 76.8,
+     "what": "Back at top (overscroll stretch)"
+    },
+    {
+     "t": 77.8,
+     "what": "Scrolled so 'textview2_text' is first row"
+    },
+    {
+     "t": 78.4,
+     "what": "Tap on 'Run'"
+    },
+    {
+     "t": 78.6,
+     "what": "Run -> 'Stop', 'Deleting temporary files...' progress strip appears"
+    },
+    {
+     "t": 79.4,
+     "what": "Swipe right to Component tab during build (file selector 'MainActivity.java')"
+    },
+    {
+     "t": 80,
+     "what": "Event tab shown, still 'Deleting temporary files...'"
+    }
+   ]
+  },
+  {
+   "range": "80.0-100.0 s",
+   "events": [
+    {
+     "t_start": 80,
+     "t_end": 80.2,
+     "screen": "Event tab (Activity category), build already running",
+     "action": "Event page has just settled after the previous swipe from the Component tab. The finger is still lifting: in native frames the touch dot sits at about (720,1244) full-res until about 80.07 s. No new UI change. Bottom panel still shows the build in progress, with the progress bar at about 5%.",
+     "visible_text": "\"NewProject\" / \"601\"; tabs \"Design\" \"Event\"(selected) \"Component\" \"Strings\"; left rail \"Activity\" \"View\" \"Component\" \"Drawer\" \"Moreblock\"; card \"onCreate\" / \"On activity create\"; FAB \"+\"; \"Deleting temporary files...\"; dropdown \"MainActivity.java\"; \"Stop\"",
+     "ad_banner_visible": true,
+     "overlays_or_glitches": "Status bar shows \"8:23\" and notification icons. Show-touches dot is lifting.",
+     "promo_value": "low"
+    },
+    {
+     "t_start": 80.2,
+     "t_end": 80.8,
+     "screen": "Swipe transition Event -> Design",
+     "action": "New touch-down at about 80.19 s at roughly (490,1270) full-res. The finger drags right to about (700,1220). The Event page shifts right and a strip of the Design canvas (its \"1:37\" mock status bar) peeks in from the left edge at about 80.32 s. The recording then stalls: 80.40-80.73 s is near-identical frames, and the touch dot fades. At 80.734 s there is one glitched frame: the Design content is shown, the tab bar still underlines \"Event\", and the textview2 property bottom sheet covers the build panel and the ad. At 80.776 s the Design tab is fully settled: the Design tab is underlined, undo/redo icons appear in the toolbar, and the bottom dropdown changes from \"MainActivity.java\" to \"main.xml\" with a layout-preview button.",
+     "visible_text": "Mid-swipe: \"onCreate\" / \"On activity create\", \"Activity\" \"View\" \"Component\" \"Drawer\" \"Moreblock\", canvas strip \"1:37\". Glitch frame 80.734: \"textview2\", \"Basic\" \"Recent\" \"Event\", \"Custom attributes\" \"Convert\" \"Width\" \"Heigh\"(cut) \"See All\". Settled: \"Design\"(selected), \"main.xml\"",
+     "ad_banner_visible": true,
+     "overlays_or_glitches": "Show-touches dot from 80.19 to about 80.6 s. Choppy, frozen swipe from 80.4 to 80.73 s. One-frame UI glitch at 80.734 s: tab indicator and content are out of sync and the property bottom sheet flashes; there is no ad in that single frame. Status bar shows \"8:23\".",
+     "promo_value": "low"
+    },
+    {
+     "t_start": 80.8,
+     "t_end": 84.4,
+     "screen": "Design tab (palette + main.xml canvas), build running",
+     "action": "Fully static Design view while the build sits on its first step. The canvas holds the empty linear1 frame with a tiny grey \"TextView\" placeholder (textview2) centred. The progress bar stays at about 5% (fill x 35-73 full-res). No touches. Pixel stats show no change in the main area from 80.776 to 100 s.",
+     "visible_text": "\"NewProject\" / \"601\"; tabs \"Design\"(selected) \"Event\" \"Component\" \"Strings\"; \"Create a widget\"; \"AndroidX\": \"TabLayout\" \"BottomNavigationView\" \"CollapsingToolbar\" \"CardView\" \"TextInputLayout\" \"SwipeRefreshLayout\" \"ConstraintLayout\" \"NestedScrollView\" \"MaterialCardView\"; \"Widgets\": \"TextView\" \"EditText\" \"AutoCompleteTextView\" \"MultiAutoCompleteTextView\" \"Button\" \"MaterialButton\"; canvas \"main.xml\" \"1:37\" \"Toolbar\" \"TextView\"; \"Deleting temporary files...\"; \"main.xml\"; \"Stop\"",
+     "ad_banner_visible": true,
+     "overlays_or_glitches": "Status bar shows \"8:23\" with notification icons, excluded by cropping y>=80. No touch indicators.",
+     "promo_value": "medium"
+    },
+    {
+     "t_start": 84.4,
+     "t_end": 85,
+     "screen": "Design tab, build panel",
+     "action": "Build status changes to \"Generating source code...\". The first native frame is 84.409 s. The progress bar grows from about 5% to about 9%. The rest of the screen is static.",
+     "visible_text": "\"Generating source code...\"; \"main.xml\"; \"Stop\"",
+     "ad_banner_visible": true,
+     "overlays_or_glitches": "",
+     "promo_value": "high"
+    },
+    {
+     "t_start": 85,
+     "t_end": 86.7,
+     "screen": "Design tab, build panel",
+     "action": "Status changes to \"Extracting built-in libraries...\". The first native frame is 85.067 s. The bar grows from about 9% to about 15% by about 85.6 s, then holds.",
+     "visible_text": "\"Extracting built-in libraries...\"",
+     "ad_banner_visible": true,
+     "overlays_or_glitches": "",
+     "promo_value": "high"
+    },
+    {
+     "t_start": 86.7,
+     "t_end": 87.4,
+     "screen": "Design tab, build panel",
+     "action": "Status changes to \"Compiling resources with AAPT2...\". The first native frame is 86.711 s. The bar jumps quickly from about 15% to about 44%. This is the most dynamic progress moment in the range.",
+     "visible_text": "\"Compiling resources with AAPT2...\"",
+     "ad_banner_visible": true,
+     "overlays_or_glitches": "",
+     "promo_value": "high"
+    },
+    {
+     "t_start": 87.4,
+     "t_end": 94.5,
+     "screen": "Design tab, build panel",
+     "action": "Status changes to \"Linking resources with AAPT2...\". The first native frame is 87.417 s. The bar creeps from about 44% to 50% by about 88.4 s, then stays frozen at 50% for about 6 s (dead time).",
+     "visible_text": "\"Linking resources with AAPT2...\"",
+     "ad_banner_visible": true,
+     "overlays_or_glitches": "There are invisible periodic compression keyframe blips about every 1 s; nothing is visible.",
+     "promo_value": "medium"
+    },
+    {
+     "t_start": 94.5,
+     "t_end": 94.6,
+     "screen": "Design tab, build panel",
+     "action": "A brief status \"Generating view binding...\" shows for only 2 native frames (94.509-94.59 s). It is not present in the 5 fps frame set.",
+     "visible_text": "\"Generating view binding...\"",
+     "ad_banner_visible": true,
+     "overlays_or_glitches": "Too short to read at real time.",
+     "promo_value": "low"
+    },
+    {
+     "t_start": 94.6,
+     "t_end": 100,
+     "screen": "Design tab, build panel",
+     "action": "Status changes to \"Java is compiling...\". The first native frame is 94.593 s. The bar grows from 50% to about 65% (fill to x about 549 full-res) by about 95.6 s, then stays static to 100.0 s and beyond.",
+     "visible_text": "\"Java is compiling...\"; \"main.xml\"; \"Stop\"",
+     "ad_banner_visible": true,
+     "overlays_or_glitches": "",
+     "promo_value": "medium"
+    }
+   ],
+   "best_clips": [
+    {
+     "name": "Build pipeline steps (Generating -> Extracting -> Compiling -> Linking)",
+     "source_in": 84.2,
+     "source_out": 88.6,
+     "shows": "The Design tab of the built app (linear1 + TextView) while the bottom build panel runs \"Deleting temporary files...\", \"Generating source code...\", \"Extracting built-in libraries...\", \"Compiling resources with AAPT2...\" and \"Linking resources with AAPT2...\". The progress bar fills from 5% to 50%.",
+     "crop": {
+      "x": 0,
+      "y": 80,
+      "w": 864,
+      "h": 1600
+     },
+     "suggested_speed": 1.5,
+     "notes": "The crop runs y 80-1680. It drops the system status bar (\"8:23\" and notification icons) and stops above the test-ad box, whose top border is at y=1686, and the nav bar. Aspect 0.54 is close to 9:16. A strict 864x1536 crop starting at y=144 would clip the \"NewProject\" title, so pad or letterbox instead. Nothing moves except the build panel, so the clip can also be paired with a zoom-in on the panel."
+    },
+    {
+     "name": "Build-status strip close-up",
+     "source_in": 84.2,
+     "source_out": 88.6,
+     "shows": "Close-up of the build panel only: status text changes step by step while the purple progress bar grows to 50%. It includes the \"main.xml\" dropdown and the red \"Stop\" button.",
+     "crop": {
+      "x": 0,
+      "y": 1478,
+      "w": 864,
+      "h": 197
+     },
+     "suggested_speed": 1.5,
+     "notes": "Wide banner-shaped crop (y 1478-1675), meant as a zoomed overlay or lower-third. It ends 11 px above the ad's top border (y=1686). For text and bar only, without the button row, use y=1488 h=85."
+    },
+    {
+     "name": "Full build timelapse (Deleting -> Java is compiling)",
+     "source_in": 80.8,
+     "source_out": 96,
+     "shows": "The whole build sequence on a static Design tab, compressed. It reads \"Deleting temporary files...\", \"Generating source code...\", \"Extracting built-in libraries...\", \"Compiling resources with AAPT2...\", \"Linking resources with AAPT2...\" and then \"Java is compiling...\", with the bar going from 5% to 65%.",
+     "crop": {
+      "x": 0,
+      "y": 80,
+      "w": 864,
+      "h": 1600
+     },
+     "suggested_speed": 5,
+     "notes": "At 5x the 15.2 s range becomes about 3 s. Each status stays readable except the 80 ms \"Generating view binding...\", which is fine to lose. Alternatively, cut out the dead hold from 88.4 to 94.4 s, where the bar is frozen at 50% while Linking."
+    },
+    {
+     "name": "Java is compiling kick-off",
+     "source_in": 94.2,
+     "source_out": 95.8,
+     "shows": "\"Linking resources with AAPT2...\" switches to \"Java is compiling...\" and the bar jumps from 50% to about 65%.",
+     "crop": {
+      "x": 0,
+      "y": 1478,
+      "w": 864,
+      "h": 197
+     },
+     "suggested_speed": 1,
+     "notes": "Short real-time beat. It can follow the Compiling/Linking clip once the 6 s frozen Linking hold is removed. Use crop x0 y80 w864 h1600 if the full Design screen is wanted."
+    }
+   ],
+   "key_moments": [
+    {
+     "t": 80,
+     "what": "Event tab settled after the swipe from Component. The touch dot lifts at about 80.07 s."
+    },
+    {
+     "t": 80.2,
+     "what": "Finger down at about (490,1270) full-res on the Event page (native about 80.19 s). Start of the swipe toward Design."
+    },
+    {
+     "t": 80.3,
+     "what": "Design canvas strip (\"1:37\") starts peeking in from the left edge (native 80.316 s)."
+    },
+    {
+     "t": 80.4,
+     "what": "Recording stalls mid-swipe. The frame is frozen until 80.73 s."
+    },
+    {
+     "t": 80.73,
+     "what": "One-frame glitch: Design content, \"Event\" tab still underlined, and the textview2 property bottom sheet (\"Basic\" \"Recent\" \"Event\" / \"Custom attributes\" \"Convert\" \"Width\" \"See All\") flashes over the build panel and the ad."
+    },
+    {
+     "t": 80.78,
+     "what": "Design tab settled. Undo/redo icons appear and the bottom dropdown reads \"main.xml\". The screen is static from here on except the build panel."
+    },
+    {
+     "t": 84.41,
+     "what": "Status text changes \"Deleting temporary files...\" -> \"Generating source code...\""
+    },
+    {
+     "t": 85.07,
+     "what": "Status changes to \"Extracting built-in libraries...\""
+    },
+    {
+     "t": 86.71,
+     "what": "Status changes to \"Compiling resources with AAPT2...\" and the bar starts a fast fill (15% -> 44%)."
+    },
+    {
+     "t": 87.42,
+     "what": "Status changes to \"Linking resources with AAPT2...\""
+    },
+    {
+     "t": 88.4,
+     "what": "Progress bar reaches 50% and freezes until 94.5 s."
+    },
+    {
+     "t": 94.51,
+     "what": "\"Generating view binding...\" flashes for 2 native frames."
+    },
+    {
+     "t": 94.59,
+     "what": "Status changes to \"Java is compiling...\" and the bar starts growing from 50%."
+    },
+    {
+     "t": 95.6,
+     "what": "Bar reaches about 65% and stays static through 100.0 s."
+    }
+   ]
+  },
+  {
+   "range": "100.0-120.0 s",
+   "events": [
+    {
+     "t_start": 100,
+     "t_end": 110,
+     "screen": "Design tab (main.xml) with the build status panel at the bottom, build in progress",
+     "action": "The screen is frozen and the user does not touch it. The Design palette is on the left and the phone preview on the right, with an empty layout except for a small grey centred 'TextView' label. The build status reads 'Java is compiling...'. The progress bar is still at about 65%: the fill runs from x≈34 to x≈551 at full res, on a track that ends at x≈830. Pixel-diffing at full frame rate shows no change in this span apart from one-pixel codec flicker in the nav bar.",
+     "visible_text": "\"NewProject\" / \"601\"; tabs \"Design\" \"Event\" \"Component\" \"Strings\"; preview \"main.xml\" \"Toolbar\" \"1:37\"; canvas label \"TextView\"; palette \"Create a widget\", \"AndroidX\", \"TabLayout\", \"BottomNavigatio nView\", \"CollapsingToolba r\", \"CardView\", \"TextInputLayout\", \"SwipeRefreshLay out\", \"ConstraintLayout\", \"NestedScrollView\", \"MaterialCardVie w\", \"Widgets\", \"TextView\", \"EditText\", \"AutoCompleteTex tView\", \"MultiAutoComple teTextView\", \"Button\", \"MaterialButton\"; status \"Java is compiling...\"; bottom bar \"main.xml\", \"Stop\"; ad \"Anúncio de teste\" \"Nice job!\" \"This is a 320x50 test ad.\"; status bar \"8:23\", \"99\"",
+     "ad_banner_visible": true,
+     "overlays_or_glitches": "A Google test ad banner (320x50 variant) fills y≈1685-1818 at full res. The status bar at the top shows 8:23, a notification glyph and a '…'. The Android nav bar is at the bottom. No touch indicators or popups.",
+     "promo_value": "low"
+    },
+    {
+     "t_start": 110,
+     "t_end": 111.2,
+     "screen": "Design tab, build status panel",
+     "action": "The build moves to its next step. At 110.0 the status line changes from 'Java is compiling...' to 'D8 is running...' (first changed source frame at 110.04). From about 110.1 the progress bar eases forward from about 65% to about 85%, with the fill end moving from x≈551 to x≈710 at full res. Most of the movement happens by 110.6, and the bar settles at 111.2. Nothing else on screen changes, and there is no user input.",
+     "visible_text": "\"D8 is running...\" (was \"Java is compiling...\"); \"main.xml\", \"Stop\"; \"NewProject\" \"601\"; \"Design\" \"Event\" \"Component\" \"Strings\"; canvas \"TextView\"; ad \"Anúncio de teste\" \"Nice job!\" \"This is a 320x50 test ad.\"",
+     "ad_banner_visible": true,
+     "overlays_or_glitches": "The 320x50 test ad banner is still at the bottom (y≥1685). There are no popups or touch indicators.",
+     "promo_value": "medium"
+    },
+    {
+     "t_start": 111.2,
+     "t_end": 112.4,
+     "screen": "Design tab, build status panel",
+     "action": "Static. The status reads 'D8 is running...' and the bar holds at about 85%. There is no user input.",
+     "visible_text": "\"D8 is running...\"; \"main.xml\", \"Stop\"; \"Anúncio de teste\" \"Nice job!\" \"This is a 320x50 test ad.\"",
+     "ad_banner_visible": true,
+     "overlays_or_glitches": "320x50 test ad banner at the bottom.",
+     "promo_value": "low"
+    },
+    {
+     "t_start": 112.4,
+     "t_end": 120,
+     "screen": "Design tab, build status panel",
+     "action": "At 112.4 (source frame 112.46, settled by 112.50) the test ad banner reloads as the 468x60 variant. It now has thick black bars along its top and bottom edges (from y=1685 at full res). Nothing above y=1684 changes. The app UI then stays completely frozen until 120.0: still 'D8 is running...' at about 85%, with no user input.",
+     "visible_text": "\"D8 is running...\"; \"main.xml\", \"Stop\"; ad \"Anúncio de teste\" \"Nice job!\" \"This is a 468x60 test ad.\"; status bar \"8:23\"",
+     "ad_banner_visible": true,
+     "overlays_or_glitches": "The ad banner swaps from 320x50 to 468x60 with black letterbox bars. All of this is below y=1685, so a crop that ends at y≤1680 hides it. No popups.",
+     "promo_value": "low"
+    }
+   ],
+   "best_clips": [
+    {
+     "name": "Build handoff: Java compile to D8 (full UI)",
+     "source_in": 109.4,
+     "source_out": 111.6,
+     "shows": "Design screen of 'NewProject 601'. The bottom status line changes from 'Java is compiling...' to 'D8 is running...' and the purple progress bar slides from about 65% to about 85%.",
+     "crop": {
+      "x": 0,
+      "y": 84,
+      "w": 864,
+      "h": 1596
+     },
+     "suggested_speed": 1,
+     "notes": "This is the only motion in the whole 100-120 s range. The crop goes from below the status bar (clock and notification glyph) down to y=1680, just above the ad, which starts at y=1685. That keeps the app bar, the tabs, the canvas and the main.xml/Stop toolbar. The crop is narrower than 9:16 (864x1596), so pad it or zoom it about 1.04x. For an exact 9:16 frame use x0 y144 w864 h1536, but that clips the 'NewProject' title."
+    },
+    {
+     "name": "Build status strip close-up",
+     "source_in": 109.6,
+     "source_out": 111.4,
+     "shows": "A close-up of the build panel: 'Java is compiling...' becomes 'D8 is running...' and the bar fills further. The 'main.xml' dropdown and the red 'Stop' button sit underneath.",
+     "crop": {
+      "x": 0,
+      "y": 1488,
+      "w": 864,
+      "h": 192
+     },
+     "suggested_speed": 0.75,
+     "notes": "Works as a lower-third or a punch-in insert: scale it up and put it over a background, or stack it under another clip. It ends at y=1680, so the ad (y≥1685) stays out. At 0.75x the bar movement reads more clearly. For only the text and the bar, use y1488 h96."
+    },
+    {
+     "name": "Build progress timelapse",
+     "source_in": 100,
+     "source_out": 112,
+     "shows": "About 10 s of 'Java is compiling...' at 65%, then the switch to 'D8 is running...' and the bar jumping to about 85%. Sped up, it reads as the build moving forward.",
+     "crop": {
+      "x": 0,
+      "y": 84,
+      "w": 864,
+      "h": 1596
+     },
+     "suggested_speed": 6,
+     "notes": "The source is completely static until 110.0, so 6x (about 2 s on screen) loses nothing. This is a good beat between the compile steps from other ranges (AAPT2 and Java before, D8 here). The crop excludes both versions of the ad banner and the status bar."
+    },
+    {
+     "name": "D8 hold plate (caption background)",
+     "source_in": 111.4,
+     "source_out": 120,
+     "shows": "Frozen Design screen with 'D8 is running...' at about 85%.",
+     "crop": {
+      "x": 0,
+      "y": 84,
+      "w": 864,
+      "h": 1596
+     },
+     "suggested_speed": 1,
+     "notes": "Zero motion, so use it only as a short still plate (≤1 s) behind a text overlay such as 'Compilando...', or as a freeze frame. The ad swap at 112.4 happens entirely below y=1685, so it is invisible inside this crop."
+    }
+   ],
+   "key_moments": [
+    {
+     "t": 100,
+     "what": "Range starts on a frozen Design screen: 'Java is compiling...' with the progress bar at about 65%, the 320x50 test ad at the bottom, status bar clock 8:23. No user touches anywhere in 100-120 s."
+    },
+    {
+     "t": 110,
+     "what": "The status text changes from 'Java is compiling...' to 'D8 is running...' (first changed source frame at 110.04)."
+    },
+    {
+     "t": 110.1,
+     "what": "The progress bar starts advancing from about 65% (fill end x≈551 at full res)."
+    },
+    {
+     "t": 110.6,
+     "what": "The progress bar is at about 83%; most of the movement is done."
+    },
+    {
+     "t": 111.2,
+     "what": "The progress bar settles at about 85% (fill end x≈710 at full res); the screen is static again."
+    },
+    {
+     "t": 112.4,
+     "what": "The test ad banner reloads from 'This is a 320x50 test ad.' to 'This is a 468x60 test ad.', with black bars, at y≥1685 (source frame 112.46). Nothing above y=1684 changes."
+    },
+    {
+     "t": 120,
+     "what": "End of range: still static, 'D8 is running...' at about 85%; the build has not finished yet."
+    }
+   ]
+  },
+  {
+   "range": "120.0-142.06 s",
+   "events": [
+    {
+     "t_start": 120,
+     "t_end": 125.6,
+     "screen": "Design tab, build in progress (bottom build-status bar)",
+     "action": "No user input. Static screen while the build runs: the status line reads \"D8 is running...\" with the purple progress bar at about 85% and not moving; the Stop button is active. The canvas preview shows the empty main layout with the single \"TextView\" (textview2) at its centre. At 122.0 the status-bar and nav-bar icons dim slightly. No other change.",
+     "visible_text": "\"NewProject\" \"601\"; tabs \"Design\" \"Event\" \"Component\" \"Strings\"; \"Create a widget\"; \"AndroidX\" \"TabLayout\" \"BottomNavigationView\" \"CollapsingToolbar\" \"CardView\" \"TextInputLayout\" \"SwipeRefreshLayout\" \"ConstraintLayout\" \"NestedScrollView\" \"MaterialCardView\"; \"Widgets\" \"TextView\" \"EditText\" \"AutoCompleteTextView\" \"MultiAutoCompleteTextView\" \"Button\" \"MaterialButton\"; preview \"main.xml\" \"Toolbar\" \"1:37\"; canvas \"TextView\"; \"D8 is running...\"; \"main.xml\" \"Stop\"; ad \"Anúncio de teste\" \"Nice job!\" \"This is a 468x60 test ad.\"; status bar \"8:23\"",
+     "ad_banner_visible": true,
+     "overlays_or_glitches": "Status bar shows notification icons (octopus-like icon and \"...\"). The ad banner sits at y≈1686-1810 full-res.",
+     "promo_value": "medium"
+    },
+    {
+     "t_start": 125.6,
+     "t_end": 127.6,
+     "screen": "Design tab, widget drag on canvas",
+     "action": "125.6: the finger goes down on the TextView in the centre of the canvas and a touch-indicator circle appears. 125.8: a long-press drag starts. The TextView lifts as a blue drag shadow, a dashed blue outline appears around the root layout, and a \"Drag here to delete\" pill (with an X-backspace icon) appears at the bottom of the canvas. The finger holds the shadow near the centre with no visible movement. The build status still reads \"D8 is running...\".",
+     "visible_text": "\"Drag here to delete\"; \"D8 is running...\"; \"Stop\"; \"Anúncio de teste\" \"Nice job!\" \"This is a 468x60 test ad.\"",
+     "ad_banner_visible": true,
+     "overlays_or_glitches": "Touch-indicator circle on the TextView drag shadow",
+     "promo_value": "low"
+    },
+    {
+     "t_start": 127.6,
+     "t_end": 129.8,
+     "screen": "Design tab (drag still held) with system screenshot preview",
+     "action": "127.6: a screenshot flash briefly brightens the whole frame. 127.8: a large screenshot thumbnail appears on the right with \"Estender\" and \"Enviar\" buttons. 128.0-128.4: it shrinks and docks in the top-right corner (about x 600-850, y 70-760 full-res) and covers the Component/Strings tabs and the right side of the preview. The drag shadow and \"Drag here to delete\" stay on screen.",
+     "visible_text": "\"Estender\" \"Enviar\"; \"Drag here to delete\"; \"D8 is running...\"; \"Stop\"; ad \"Nice job!\" \"This is a 468x60 test ad.\"",
+     "ad_banner_visible": true,
+     "overlays_or_glitches": "System screenshot flash at 127.6, then the screenshot preview/share popup (\"Estender\"/\"Enviar\"). Touch indicator visible through 128.0.",
+     "promo_value": "unusable"
+    },
+    {
+     "t_start": 129.8,
+     "t_end": 130.8,
+     "screen": "Design tab, widget property panel opening (screenshot popup still docked)",
+     "action": "129.8: the drag is released in the same place. \"Drag here to delete\" and the dashed outline disappear, and the TextView is now selected (teal fill). The build-status text changes to \"Building APK...\" while the widget property panel slides up from the bottom; by 130.0 it fully covers the build bar, the Run/Stop row and the ad. The panel shows \"textview2\" with a dropdown arrow and delete/save icons, chips \"Basic\" (selected), \"Recent\", \"Event\", and tiles \"Custom attributes\", \"Convert\", \"Width\", \"Height\", \"See All\". The screenshot popup is still docked at the top right until 130.6.",
+     "visible_text": "\"Building APK...\" (only 129.8-129.9); \"textview2\"; \"Basic\" \"Recent\" \"Event\"; \"Custom attributes\" \"Convert\" \"Width\" \"Heigh[t]\" \"See All\"; popup \"Estender\" \"Enviar\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "Screenshot preview popup (\"Estender\"/\"Enviar\") in the top-right until 130.6. At 129.8 the ad is still partly visible beneath the sliding panel.",
+     "promo_value": "low"
+    },
+    {
+     "t_start": 130.8,
+     "t_end": 134.2,
+     "screen": "Design tab, textview2 selected with widget property panel",
+     "action": "130.8: the screenshot popup is gone and the screen is clean. Static: the TextView is selected (teal) in the canvas and the property panel for \"textview2\" is open. No user input.",
+     "visible_text": "\"NewProject\" \"601\"; \"Design\" \"Event\" \"Component\" \"Strings\"; \"main.xml\" \"Toolbar\" \"1:37\"; canvas \"TextView\"; \"textview2\"; \"Basic\" \"Recent\" \"Event\"; \"Custom attributes\" \"Convert\" \"Width\" \"Heigh[t]\" \"See All\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "None, apart from the notification icons in the status bar. Faint compression shimmer once per second at keyframes.",
+     "promo_value": "medium"
+    },
+    {
+     "t_start": 134.2,
+     "t_end": 137.6,
+     "screen": "Design tab + property panel with second system screenshot preview",
+     "action": "134.2: a second screenshot is taken. The whole screen flashes and scales down, and an \"Estender\" bar shows at the bottom edge. 134.4: the screenshot preview docks in the top-right with \"Estender\" and \"Enviar\" and stays there until 137.4. The app itself does not change.",
+     "visible_text": "\"Estender\" \"Enviar\"; \"textview2\"; \"Basic\" \"Recent\" \"Event\"; \"Custom attributes\" \"Convert\" \"Width\" \"See All\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "Screenshot flash and scale-down animation at 134.2, then the screenshot preview/share popup. The status-bar clock changes from 8:23 to 8:24 between 136 and 137.",
+     "promo_value": "unusable"
+    },
+    {
+     "t_start": 137.6,
+     "t_end": 138.5,
+     "screen": "Design tab, textview2 selected with property panel",
+     "action": "137.6: the screenshot popup disappears. A touch indicator sits on the nav-bar Back button from 137.6 to 138.0, with a ripple at 138.0. From 138.2 to 138.4 the screen is clean and static.",
+     "visible_text": "\"textview2\"; \"Basic\" \"Recent\" \"Event\"; \"Custom attributes\" \"Convert\" \"Width\" \"Heigh[t]\" \"See All\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "Touch-indicator circle and ripple in the system nav bar (y>1820 full-res) from 137.6 to 138.0",
+     "promo_value": "medium"
+    },
+    {
+     "t_start": 138.5,
+     "t_end": 139,
+     "screen": "System install/verification dialog over Sketchware",
+     "action": "From about 138.54 to 138.71 (native frames; 5 fps frame 138.6) a dark scrim covers the app and a system dialog appears with a download icon, \"Desconhecido\", \"Testando app...\", a progress bar and \"Cancelar\". It disappears by 138.8. In the 138.8 frame the status bar and nav bar are blank/white for one frame. By 139.0 the screen is back to normal.",
+     "visible_text": "\"Desconhecido\" \"Testando app...\" \"Cancelar\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "System dialog with dim scrim (138.5-138.7). Blank system bars at 138.8.",
+     "promo_value": "unusable"
+    },
+    {
+     "t_start": 139,
+     "t_end": 140.6,
+     "screen": "Design tab, textview2 selected with property panel",
+     "action": "Static, clean screen identical to 130.8-134.0. No input.",
+     "visible_text": "\"textview2\"; \"Basic\" \"Recent\" \"Event\"; \"Custom attributes\" \"Convert\" \"Width\" \"Heigh[t]\" \"See All\"; canvas \"TextView\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "None (status-bar notification icons only)",
+     "promo_value": "medium"
+    },
+    {
+     "t_start": 140.6,
+     "t_end": 140.8,
+     "screen": "Design tab, property panel closing",
+     "action": "140.6: the user taps the nav-bar Back button (touch indicator and ripple). 140.8: the property panel is gone and the bottom bar returns, now with a purple \"Run\" button instead of \"Stop\", so the build has finished. The ad banner returns.",
+     "visible_text": "\"textview2\" panel, then \"main.xml\" \"Run\"",
+     "ad_banner_visible": false,
+     "overlays_or_glitches": "Touch indicator and ripple on the nav-bar Back button (140.6-140.8)",
+     "promo_value": "low"
+    },
+    {
+     "t_start": 140.8,
+     "t_end": 142.06,
+     "screen": "Design tab, idle after the build (Run button)",
+     "action": "Static Design tab after the build: the bottom bar shows the \"main.xml\" selector, the layout-preview button, and a filled purple \"Run\" button with its dropdown chevron. The palette now also shows \"ImageView\" and part of \"CircleImageView\". The TextView in the canvas keeps its teal highlight. No further input until the recording ends.",
+     "visible_text": "\"main.xml\" \"Run\"; \"MaterialButton\" \"ImageView\" \"CircleImageView\" (cut off); canvas \"TextView\"; ad \"Anúncio de teste\" \"Nice job!\" \"This is a 468x60 test ad.\"; status bar \"8:24\"",
+     "ad_banner_visible": true,
+     "overlays_or_glitches": "Back-button ripple fading in the nav bar at 140.8 only",
+     "promo_value": "medium"
+    }
+   ],
+   "best_clips": [
+    {
+     "name": "Build running - D8 stage",
+     "source_in": 120,
+     "source_out": 125.4,
+     "shows": "Design tab during the build: \"D8 is running...\" with the progress bar at about 85% and the Stop button, plus the canvas with the TextView. Use it to end the build sequence before the result.",
+     "crop": {
+      "x": 0,
+      "y": 84,
+      "w": 864,
+      "h": 1596
+     },
+     "suggested_speed": 1,
+     "notes": "Completely static, so a 1.5-2.5 s slice is enough (any sub-range works). The crop removes the status bar (y<84) and the test ad (starts at y≈1686). The bottom of the crop at y=1680 keeps the \"D8 is running...\" line, the progress bar and the main.xml/Stop row. Avoid going past 125.4: the finger touches the TextView at 125.6."
+    },
+    {
+     "name": "Widget selected - property panel (clean, no ad)",
+     "source_in": 130.8,
+     "source_out": 134,
+     "shows": "textview2 selected on the canvas, with the widget property panel open: \"textview2\", Basic/Recent/Event chips, and Custom attributes / Convert / Width / Height / See All tiles.",
+     "crop": {
+      "x": 0,
+      "y": 84,
+      "w": 864,
+      "h": 1728
+     },
+     "suggested_speed": 1,
+     "notes": "The cleanest stretch in this range: no ad, no popups, no touches. Static, so it works as a hold or a background under a caption. Crop y 84-1812 drops the status bar (notification icons) and the system nav bar. Do not start before 130.8, because the screenshot popup is still visible at 130.6."
+    },
+    {
+     "name": "Property panel - alternate clean take",
+     "source_in": 139,
+     "source_out": 140.4,
+     "shows": "The same clean textview2 property-panel screen.",
+     "crop": {
+      "x": 0,
+      "y": 84,
+      "w": 864,
+      "h": 1728
+     },
+     "suggested_speed": 1,
+     "notes": "A backup for the clip above. It must start at or after 139.0 because the \"Desconhecido / Testando app...\" system dialog and blank bars run 138.5-138.8, and end by 140.4 because the Back tap is at 140.6. The frames at 138.2-138.4 are also clean if a few more frames are needed."
+    },
+    {
+     "name": "Build finished - Run button ready",
+     "source_in": 140.8,
+     "source_out": 142,
+     "shows": "After the build, the bottom bar switches back from Stop to a filled purple \"Run\" button. The canvas shows the TextView.",
+     "crop": {
+      "x": 0,
+      "y": 84,
+      "w": 864,
+      "h": 1596
+     },
+     "suggested_speed": 1,
+     "notes": "Static, about 1.2 s; it can be frozen or extended. The crop ends at y=1680 to cut off the test ad, which returns at 140.8, and still keeps the main.xml / Run row (about y 1585-1668). The touch ripple at 140.8 is in the nav bar and falls outside the crop."
+    }
+   ],
+   "key_moments": [
+    {
+     "t": 120,
+     "what": "Range start: \"D8 is running...\", progress bar at about 85% (static), Stop button, ad visible"
+    },
+    {
+     "t": 122,
+     "what": "Status-bar and nav-bar icons dim slightly (cosmetic only)"
+    },
+    {
+     "t": 125.6,
+     "what": "Finger down on the TextView at the canvas centre (touch indicator appears)"
+    },
+    {
+     "t": 125.8,
+     "what": "Drag starts: blue drag shadow, dashed outline on the root layout, \"Drag here to delete\" pill appears"
+    },
+    {
+     "t": 127.6,
+     "what": "Screenshot flash (whole frame brightens)"
+    },
+    {
+     "t": 127.8,
+     "what": "Screenshot preview with \"Estender\"/\"Enviar\" appears on the right"
+    },
+    {
+     "t": 128.2,
+     "what": "Screenshot preview docked in the top-right corner"
+    },
+    {
+     "t": 129.8,
+     "what": "Drag released; TextView selected; \"Building APK...\" appears as the property panel slides up"
+    },
+    {
+     "t": 130,
+     "what": "Property panel fully open (\"textview2\", Basic/Recent/Event, Custom attributes/Convert/Width/Height/See All); ad hidden"
+    },
+    {
+     "t": 130.8,
+     "what": "First screenshot popup gone; clean screen begins"
+    },
+    {
+     "t": 134.2,
+     "what": "Second screenshot: flash and scale-down animation"
+    },
+    {
+     "t": 134.4,
+     "what": "Second screenshot preview (\"Estender\"/\"Enviar\") docked top-right"
+    },
+    {
+     "t": 136.5,
+     "what": "Status-bar clock changes from 8:23 to 8:24 (between the 136 s and 137 s stills)"
+    },
+    {
+     "t": 137.6,
+     "what": "Screenshot popup gone; touch indicator on the nav-bar Back button (until 138.0)"
+    },
+    {
+     "t": 138.54,
+     "what": "System dialog \"Desconhecido\" / \"Testando app...\" / \"Cancelar\" fades in over a dim scrim (5 fps frame 138.6)"
+    },
+    {
+     "t": 138.8,
+     "what": "Dialog gone; system bars blank for one frame"
+    },
+    {
+     "t": 139,
+     "what": "Back to the clean property-panel screen"
+    },
+    {
+     "t": 140.6,
+     "what": "Tap on the nav-bar Back button (touch indicator and ripple)"
+    },
+    {
+     "t": 140.8,
+     "what": "Property panel closes; bottom bar shows the purple \"Run\" button (build finished); ad banner returns"
+    },
+    {
+     "t": 142.06,
+     "what": "End of recording (static Design tab with the Run button)"
+    }
+   ]
+  }
+ ],
+ "geometry": {
+  "status_bar_h": 86,
+  "nav_bar_y": 1820,
+  "ad_banner_rule": "The TEST AD container sits in the same place on every screen that has one: y=1685..1819 (h=135), x=0..863 (full width). It starts right below the bottom bar (white bar y=1567..1684) and ends right above the nav bar (y=1820). The geometry was checked on Design (1.0, 70.4, 115.4), Event (38.4, 68.4), Component (74.6) and Strings (75.4) and is the same for both creatives. The 468x60 creative has black bands at y=1686-1696 and y=1808-1818, the dark label \"Anúncio de teste\" at x=321..542 y=1686..1724, plus \"Nice job!\" and \"This is a 468x60 test ad.\" with the logo near x=762..830. The 320x50 creative has thin grey border lines at y=1686-1687, y=1817-1818, x=1-2 and x=861-862, the same label, and \"This is a 320x50 test ad.\". To remove the ad on any tab screen, crop at y<=1684, or at y<=1564 to drop the bottom bar too. AD VISIBLE (5 fps label scan): 468x60 0.0-4.4, 19.4-20.8, 35.2-36.8 and 38.0-40.0 (40.0 is the Event-to-logic transition); 320x50 67.6-71.4 and 73.4-112.2; 468x60 again 112.4-129.6 and 140.8-142.0 (the creative switches 320->468 at 112.4 with no layout change). AD ABSENT: 4.6-19.2 (linear1 property sheet, Edit Properties, Width dialog 9.6-10.8, Height dialog 11.8-13.4); 21.0-35.0 (linear1 sheet, Edit Properties, Gravity dialog 29.0-30.4); 37.0-37.8 (textview2 sheet); 40.2-67.4 (whole logic editor: palette, block drag, Select widget 52.2-53.6, Enter string value + keyboard 56.0-64.4, \"Now Loading\" scrim 66.8-67.2); 71.6-73.2 (textview2 sheet, peeking low); 129.8-140.6 (textview2 sheet, \"Building APK...\" at 129.8). Other overlays to avoid even when the ad is absent: a screenshot share popup (\"Estender\"/\"Enviar\" with thumbnail) at about x=606..836 y=72..766, during 127.8-130.6 and 134.2-137.6 (screenshot flash at 134.2-134.4); a system dialog \"Desconhecido / Testando app... / Cancelar\" with a full-screen scrim at 138.6; and the block-drag bar \"Delete / Duplicate / Collection\", which replaces the logic toolbar at 54.6-55.0.",
+  "regions": [
+   {
+    "name": "status_bar",
+    "at_t": 1,
+    "x": 0,
+    "y": 0,
+    "w": 864,
+    "h": 86,
+    "notes": "Android status bar, y=0..85. The app window starts at y=86: the Edit Properties toolbar card's top border is at y=86-88 in the scrim and transition frames (7.8 s, 10.0 s); on Design/Event it has the same colour (248,249,251) as the toolbar. Glyphs (clock '8:21'/'8:22'/'8:23', notification icons, 4G/signal/wifi, battery '99') sit at x=55..808, y=27..55 at 1.0 and y=24..52 from about 40 s; the system UI drifts about 3 px (burn-in shift). Crop from y>=88 to be safe."
+   },
+   {
+    "name": "app_toolbar_main",
+    "at_t": 1,
+    "x": 0,
+    "y": 86,
+    "w": 864,
+    "h": 120,
+    "notes": "Design-tab toolbar, y=86..205. Content bbox x=42..835, y=119..175, vertically centred around y=147. Groups: back arrow x=42-76; 'NewProject' / '601' x=129-294; undo x=384-425; redo (greyed) x=486-527; save x=587-629; more (3 dots) x=706-714; code '<>' x=789-835. On the Event/Component/Strings tabs undo and redo are hidden; save/more/code keep the same x positions (checked at 38.4)."
+   },
+   {
+    "name": "tab_row",
+    "at_t": 1,
+    "x": 0,
+    "y": 206,
+    "w": 864,
+    "h": 104,
+    "notes": "y=206..309. Labels at y=246..272: 'Design' x=67-148, 'Event' x=292-357, 'Component' x=469-611, 'Strings' x=713-797. Active underline y=301..306 (Design: x=64..150). Full-width divider y=307..309."
+   },
+   {
+    "name": "widget_palette_column",
+    "at_t": 1,
+    "x": 0,
+    "y": 310,
+    "w": 256,
+    "h": 1255,
+    "notes": "Left palette, y=310..1564; x=248..279 is plain background before the canvas. Purple palette pill x=0..127, y=309..359; bookmark icon at about x=180..200. 'Create a widget' card x=8..246, y=373..490. Section headers 'Layouts' / 'AndroidX' / 'Widgets'; list items x=8..237, about 51 px pitch (first 'Linear(H)' at about y=548..590). The bottom is clipped at 1564 by the bottom bar, at 1457 when the property sheet is open, and at 1477 during the build strip. The list is scrolled to AndroidX/Widgets from 34.0 s on."
+   },
+   {
+    "name": "design_preview_canvas",
+    "at_t": 1,
+    "x": 280,
+    "y": 352,
+    "w": 559,
+    "h": 1213,
+    "notes": "Phone preview, x=280..838, y=352..1564 (cut by the bottom-bar divider at 1565). Bottom is 1457 while the property sheet is open (4.6-19.2, 21.0-35.0, 37.0-37.8, 71.6-73.2 lower, 129.8+) and 1477 while the build strip shows (78.6-129.6)."
+   },
+   {
+    "name": "canvas_header_main_xml_toolbar",
+    "at_t": 1,
+    "x": 280,
+    "y": 352,
+    "w": 559,
+    "h": 121,
+    "notes": "Blue preview app bar (about RGB 104,118,163), y=352..472: 'main.xml' top-left, signal/battery/'1:37' top-right, 'Toolbar' below. A white strip y=473..483 and a grey line at y=484 separate it from the content."
+   },
+   {
+    "name": "canvas_white_content",
+    "at_t": 1,
+    "x": 280,
+    "y": 486,
+    "w": 559,
+    "h": 1078,
+    "notes": "White (255) preview content area, x=280..838, y=486..1563. Fills cyan once linear1 is match_parent/match_parent (13.6+ s). The 'TextView' (textview2) widget shows as a small chip near the centre (about x=540..600, y=1210..1240) after 36.8 s. Bottom clipped like the canvas."
+   },
+   {
+    "name": "bottom_bar_design",
+    "at_t": 1,
+    "x": 0,
+    "y": 1565,
+    "w": 864,
+    "h": 120,
+    "notes": "Divider y=1565-1566, white bar y=1567..1684. Buttons span y=1584..1668: 'main.xml' file card x=26..333 (icon + 'main.xml' + chevron); blueprint (lavender) x=360..512; 'Run' (purple, play icon) x=530..740; dropdown chevron x=745..846, so the Run split button covers x=530..846. Event tab (38.4): 'MainActivity.java' card x=26..512, Run x=530..740, dropdown x=745..846. Strings tab: 'strings.xml' card x=26..512. Not shown while a property sheet is open."
+   },
+   {
+    "name": "bottom_bar_build_stop",
+    "at_t": 115.4,
+    "x": 0,
+    "y": 1565,
+    "w": 864,
+    "h": 120,
+    "notes": "During the build (78.6-129.6) the button row stays at y=1584..1668 with new widths: 'main.xml' card x=26..325, blueprint x=352..504, 'Stop' (pink, square icon) x=522..740, grey dropdown x=745..846."
+   },
+   {
+    "name": "build_progress_strip",
+    "at_t": 115.4,
+    "x": 0,
+    "y": 1478,
+    "w": 864,
+    "h": 106,
+    "notes": "Appears above the button row from 78.6 to 129.8: divider y=1478-1479, white from y=1480 to the buttons at 1584. Status text bbox x=36..222, y=1509..1534 ('D8 is running...'); the left edge stays at x=36 and the width changes with the text. Progress bar y=1554..1561: track x=34..829, fill x=34..709 at 115.4. Text timeline from the 5 fps diff: 'Deleting temporary files...' 78.6-84.2; 'Generating source code...' 84.4-84.8; 'Extracting built-in libraries...' 85.0-86.6; 'Compiling resources with AAPT2...' 86.8-87.2; 'Linking resources with AAPT2...' 87.4-94.4; 'Java is compiling...' 94.6-109.8; 'D8 is running...' 110.0-129.6; 'Building APK...' 129.8. The strip is in the same place on Strings (78.6), Component (79.4-79.8), Event (80.0-80.6) and Design (80.8+)."
+   },
+   {
+    "name": "ad_banner_468x60_design",
+    "at_t": 1,
+    "x": 0,
+    "y": 1685,
+    "w": 864,
+    "h": 135,
+    "notes": "Must be cropped out. Black bands y=1686-1696 and y=1808-1818; 'Anúncio de teste' label x=321..542, y=1686..1724; 'Nice job!' and 'This is a 468x60 test ad.' inside."
+   },
+   {
+    "name": "ad_banner_468x60_event_tab",
+    "at_t": 38.4,
+    "x": 0,
+    "y": 1685,
+    "w": 864,
+    "h": 135,
+    "notes": "Event tab ad, same y range as on Design (checked: 1685 edge, black bands 1686-1696 / 1808-1818, nav bar from 1820)."
+   },
+   {
+    "name": "ad_banner_320x50_any_tab",
+    "at_t": 70.4,
+    "x": 0,
+    "y": 1685,
+    "w": 864,
+    "h": 135,
+    "notes": "320x50 creative (67.6-112.2): same container y=1685..1819 on Design (70.4), Event (68.4), Component (74.6) and Strings (75.4). Grey border lines y=1686-1687 / 1817-1818, x=1-2 / 861-862; label x=321..542, y=1686..1724; 'This is a 320x50 test ad.'"
+   },
+   {
+    "name": "android_nav_bar",
+    "at_t": 1,
+    "x": 0,
+    "y": 1820,
+    "w": 864,
+    "h": 100,
+    "notes": "Three-button nav bar, y=1820..1919, background about 249. Icons (square, circle, back triangle, accessibility) at x=230..768, y=1849..1890 at 1.0; they shift to x=233..771, y=1846..1887 later. When the keyboard is up, this area turns keyboard grey (239) and back becomes a down chevron."
+   },
+   {
+    "name": "property_sheet_linear1",
+    "at_t": 5.4,
+    "x": 0,
+    "y": 1458,
+    "w": 864,
+    "h": 351,
+    "notes": "Widget bottom sheet, valid 4.6-7.6 and 15.6-19.2 / 21.0-24.8 (cards scroll horizontally 16.8-19.2 and 22.4-23.6). Top divider y=1458-1460, white body to y=1808; y=1809..1819 is a white strip above the nav bar. Header row x=37..842, y=1482..1523: layout icon + 'linear1', dropdown arrow, delete-backspace icon, save icon. Chips x=14..386, y=1553..1613: 'Basic' (selected, lavender) / 'Recent' / 'Event'. Cards y=1639..1808: 'Custom attributes' x=20-187, 'Convert' x=207-374, 'Width' x=394-561, 'Height' x=581-748, partly under a lavender 'See All' (three dots) card x=688-852. The canvas and palette above end at y=1457. No ad and no bottom bar."
+   },
+   {
+    "name": "property_sheet_textview2",
+    "at_t": 37.4,
+    "x": 0,
+    "y": 1458,
+    "w": 864,
+    "h": 351,
+    "notes": "Same geometry with 'T textview2' in the header, valid 37.0-37.8, and again 130.2-141 (watch for share popups 128.2-130.6 / 134.2-137.6 and the system dialog at 138.6). At 71.6-73.2 the textview2 sheet sits lower (top divider y=1536) and its cards are clipped by the nav bar, so do not use it."
+   },
+   {
+    "name": "edit_properties_toolbar",
+    "at_t": 8.4,
+    "x": 0,
+    "y": 86,
+    "w": 855,
+    "h": 136,
+    "notes": "White toolbar card with a light border, x=0..854, y=86..221. Back arrow x=42-76; 'Edit Properties' / 'linear1' x=129..403, y=123..190; image icon x=781-827. Screen is valid 8.0-9.4, 11.0-11.6, 13.6-15.0, 25.4-28.6 and 30.6-31.8."
+   },
+   {
+    "name": "edit_properties_list",
+    "at_t": 8.4,
+    "x": 0,
+    "y": 222,
+    "w": 864,
+    "h": 1598,
+    "notes": "List y=222..1819, rows about 127.5 px pitch; icons x=20..65, text from x=85. Unscrolled at 8.4: 'ID'/'linear1' 222-349, 'Custom attributes' 349-476, 'Convert'/'LinearLayout' 476-603, 'Layout Properties' grey band y=603..679, 'Width'/'match_parent' 679-806, 'Height'/'wrap_content' 806-934, 'Padding'/'left: 8, top: 8, right: 8, bottom: 8' 934-1061, 'Margin'/'left: 0, top: 0, right: 0, bottom: 0' 1061-1188, 'Orientation'/'horizontal' 1188-1316, 'Weight sum'/'0' 1316-1443, 'Gravity'/'none' 1443-1571, 'Layout gravity'/'none' 1571-1698, 'Weight'/'0' 1698-1819. After the scroll (28-32 s), title tops are Width y=302, Height 429, Padding 557, Margin 684, Orientation 811, Weight sum 939, Gravity 1066 (row about 1033-1160; value 'center_horizontal, center_vertical' from 30.6), Layout gravity 1194, Weight 1321, 'Image Properties' 1445, 'Background resource' 1538, 'Background color' 1678. From 13.6 Height reads 'match_parent'."
+   },
+   {
+    "name": "width_dialog",
+    "at_t": 10.4,
+    "x": 59,
+    "y": 605,
+    "w": 745,
+    "h": 695,
+    "notes": "Card x=59..803, y=605..1299 over a grey scrim (about 173, covering the full screen including status and nav bars). Contents: double-arrow icon, title 'Width', radios 'match_parent' (selected) / 'wrap_content' / 'Custom value', buttons 'Cancel' 'Select'. Fades in at 9.6, fully visible 9.8-10.8, gone by 11.0."
+   },
+   {
+    "name": "height_dialog",
+    "at_t": 12.4,
+    "x": 59,
+    "y": 605,
+    "w": 745,
+    "h": 695,
+    "notes": "Same box as Width. Vertical-arrow icon, title 'Height', 'match_parent' / 'wrap_content' / 'Custom value'. 'wrap_content' is selected until 12.6; the tap at 12.8 selects 'match_parent' (13.0+); 'Select' is tapped about 13.4. Visible 11.8-13.4."
+   },
+   {
+    "name": "gravity_dialog",
+    "at_t": 30,
+    "x": 59,
+    "y": 401,
+    "w": 745,
+    "h": 1103,
+    "notes": "Card x=59..803, y=401..1503 over a scrim. Gravity icon, title 'Gravity', checkboxes 'left', 'right', 'center', 'center_horizontal', 'top', 'bottom', 'center_vertical', buttons 'Cancel' 'Select'. Visible 29.0-30.4: 'center_horizontal' is checked at about 29.6 and 'center_vertical' at about 30.0; 'Select' is tapped at 30.4."
+   },
+   {
+    "name": "event_tab_content",
+    "at_t": 38.4,
+    "x": 0,
+    "y": 310,
+    "w": 864,
+    "h": 1255,
+    "notes": "Area between the tab row and the bottom bar (y=310..1564). Left rail x=0..205, content bbox x=39..166, y=416..1282: 'Activity' (selected, lavender pill x=43..160 y=416..482, label to 522), 'View' 619-708, 'Component' 808-904, 'Drawer' 1001-1091, 'Moreblock' 1203-1282. Event card x=219..848, y=344..489: '<>' icon, 'onCreate' / 'On activity create', chevron. '+' FAB x=707..837, y=1411..1550 (with shadow). Valid 38.0-39.8 (468 ad), 67.8-68.6 and 73.4-74.2 (320 ad), 80.0-80.6 (with build strip). The toolbar has no undo/redo here."
+   },
+   {
+    "name": "logic_editor_toolbar",
+    "at_t": 66.4,
+    "x": 0,
+    "y": 86,
+    "w": 864,
+    "h": 120,
+    "notes": "y=86..205; content bbox x=42..820, y=118..179. Back arrow 42-76; 'onCreate' / 'On activity create' x=129-324; code '<>' x=475-521; undo x=579-621; redo (greyed) x=681-723; bookmark x=787-820. Valid 40.2-66.6. At 54.6-55.0 a block-drag bar 'Delete' / 'Duplicate' / 'Collection' replaces it."
+   },
+   {
+    "name": "syntax_ok_line",
+    "at_t": 66.4,
+    "x": 38,
+    "y": 221,
+    "w": 154,
+    "h": 24,
+    "notes": "Teal check plus 'Syntax OK', tight bbox x=38..191, y=221..244; a padded crop is x=0..863, y=206..261. It first appears at 56.0 (under the Enter string value scrim) and is clean, undimmed, from 64.6 to 66.6. Its arrival pushes the block stack down 51 px (hat top 222 to 273)."
+   },
+   {
+    "name": "logic_block_stack_oncreate_settext",
+    "at_t": 66.4,
+    "x": 17,
+    "y": 273,
+    "w": 378,
+    "h": 100,
+    "notes": "Final blocks, tight bbox x=17..394, y=273..372, valid 64.6-66.6; the palette is open 64.6-65.6, closing at 65.8 and closed 66.0-66.6. Orange hat 'On activity create' x=18..207, y=274..329. Blue setText block x=18..394, y=325..372 reads 'TextView : textview2 [down arrow] setText [Olá mundo]' (white string field at about x=280..391, y=341..365). Earlier states: hat alone at x=17..207, y=222..279 (40.2-50.4); hat plus empty setText x=17..343, y=222..321 at 55.4."
+   },
+   {
+    "name": "logic_workspace",
+    "at_t": 66.4,
+    "x": 0,
+    "y": 206,
+    "w": 864,
+    "h": 1614,
+    "notes": "Block canvas (248,249,251) below the toolbar, y=206..1819 with the palette closed. Puzzle FAB x=711..829, y=1667..1785 when closed and y=1157..1279 when the palette is open. With the palette open the workspace ends at y=1308."
+   },
+   {
+    "name": "blocks_palette_panel",
+    "at_t": 46.4,
+    "x": 0,
+    "y": 1309,
+    "w": 864,
+    "h": 511,
+    "notes": "White panel y=1309..1819. It opens at 41.2 (sliding) and is fully up from about 41.4; it is open 41.4-65.6 and closes at 65.8. Block list x=0..614 (Control blocks x=17..207 at 42.4; long View blocks reach x=608 at 46.4). Category column x=625..863: 'Search...' x=645..752, y=1335..1361. Colour bar x=625..633 with label from x=643; rows are 42 px tall at 51 px pitch: 'Variable' 1368-1409, 'List' 1418-1460, 'Control' 1469-1511, 'Operator' 1520-1562, 'Math' 1571-1613, 'File' 1622-1664, 'View' 1673-1715, 'Component' 1724-1766, 'XML Strings' 1775-1817. The selected category gets a full-width colour band x=625..863: Variable 41.2-42.2, Control 42.4-45.4, View 45.6-65.6."
+   },
+   {
+    "name": "select_widget_dialog",
+    "at_t": 53.4,
+    "x": 60,
+    "y": 683,
+    "w": 744,
+    "h": 539,
+    "notes": "Card x=60..803, y=683..1221 over a scrim, visible 52.2-53.6 (fading in at 52.0). Title 'Select widget' x=292..571, y=748..791. Search pill 'Search' x=102..761, y=828..941. Radio item 'TextView : textview2' x=115..411, y=980..1021; it is selected at 53.0. Buttons 'Code Editor' (left), 'Cancel', 'Select' at y=1131..1151; 'Select' is tapped at about 53.6."
+   },
+   {
+    "name": "enter_string_value_dialog",
+    "at_t": 64.2,
+    "x": 60,
+    "y": 426,
+    "w": 744,
+    "h": 441,
+    "notes": "Card x=60..803, y=426..866 while the keyboard is up (about 57.4-64.4). Before the keyboard (56.0-57.0) the same card sits at y=732..1172, and it slides up at 57.2. Title 'Enter string value' x=253..609, y=491..535. Field x=102..761, y=593..705; text starts at x=137, y=638..660. Buttons 'Code Editor' / 'Cancel' / 'Save' at about y=776..800. Typing: 'hel' is typed at 58.8-59.8 and deleted at 60.2-60.4; then 'O','Ol','Olá' (61.0-61.4, the 'Olá' suggestion is used), 'Olá m'... 'Olá mund' (63.4), 'Olá mundo' 63.6-64.4. 'Save' is tapped at 64.4 and the dialog fades at 64.6."
+   },
+   {
+    "name": "keyboard",
+    "at_t": 64.2,
+    "x": 0,
+    "y": 1208,
+    "w": 864,
+    "h": 612,
+    "notes": "Gboard-style keyboard, grey 239, y=1208..1819; the nav area y=1820..1919 below is the same grey and shows a down chevron. Suggestion strip y=1231..1272 (e.g. 'mundo' / 'mundial' / 'mundos' at 64.2); key rows y=1290..1793, x=8..854. Visible 57.2-64.4."
+   },
+   {
+    "name": "strings_tab_list",
+    "at_t": 75.2,
+    "x": 0,
+    "y": 310,
+    "w": 864,
+    "h": 1255,
+    "notes": "List area y=310..1564 (to 1477 while the build strip shows). Cards x=30..833 with a purple accent bar x=31..51, 146.5 px pitch: card 1 y=339..468 'textview1_text' / 'TextView'; then 'edittext1_hint' / 'Edit Text' 486-614, 'button1_text' / 'Button' 632-761, 'textview2_text' / 'TextView' 779-907, 'edittext2_hint' 925-1054, 'button2_text' 1072-1200, 'textview3_text' 1219-1347, 'edittext3_hint' 1365-1494, 'button3_text' from 1511 (cut). '+' FAB x=700..839, y=1395..1544. Bottom card reads 'strings.xml'. Unscrolled 75.0-75.6; scrolled 75.8-78.4."
+   },
+   {
+    "name": "component_tab_empty",
+    "at_t": 74.6,
+    "x": 299,
+    "y": 928,
+    "w": 285,
+    "h": 22,
+    "notes": "Component tab, content area x=0..863, y=310..1564. The only content is the centred text 'No components to display' (bbox x=299..583, y=928..949) plus the '+' FAB at about x=714..849, y=1409..1554. Valid 74.4-74.8 and 79.4-79.8 (with build strip)."
+   },
+   {
+    "name": "share_popup_AVOID",
+    "at_t": 129.4,
+    "x": 606,
+    "y": 72,
+    "w": 230,
+    "h": 694,
+    "notes": "System screenshot popup to avoid: a thumbnail at about x=610..830, y=75..565, plus 'Estender' (y=572..662) and 'Enviar' (y=672..762) buttons. Present 128.2-130.6 (sliding in from 127.8) and 134.6-137.4 (screenshot flash 134.2-134.4). Also avoid 138.6, a full-screen scrim with the system dialog 'Desconhecido' / 'Testando app...' / 'Cancelar'."
+   }
+  ]
+ }
+}

@@ -23,12 +23,12 @@ const preset = (name) => {
   return loaded.default ?? loaded;
 };
 
-export async function compileProject(dir) {
+export async function compileProject(dir, entryOverride) {
   const babel = require("@babel/core");
   const esbuild = require("esbuild");
   const root = await realpath(dir);
   const pkg = JSON.parse(await readFile(join(root, "package.json"), "utf8"));
-  const entry = pkg.main ?? "index.tsx";
+  const entry = entryOverride ?? pkg.main ?? "index.tsx";
 
   const solidLoader = {
     name: "solid-universal",
