@@ -1,0 +1,5 @@
+node_modules/
+production/tools/render/harness/dist/
+production/output/*.master.webm
+production/project/cache/
+*.log

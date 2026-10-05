@@ -1,0 +1,20 @@
+{
+  "name": "sketchware-ia-promo",
+  "displayName": "Sketchware IA — Promo",
+  "private": true,
+  "type": "module",
+  "main": "index.tsx",
+  "devDependencies": {
+    "@diffusionstudio/jsx": "*",
+    "solid-js": "^1.9.0"
+  },
+  "diffusion": {
+    "export": {
+      "promo": {
+        "format": "mp4",
+        "video": { "enabled": true, "codec": "avc", "bitrate": 16000000, "fps": 30, "resolution": 1080 },
+        "audio": { "enabled": true, "codec": "aac", "sampleRate": 48000, "bitrate": 256000 }
+      }
+    }
+  }
+}
