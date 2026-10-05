@@ -42,7 +42,8 @@ production/
 │   ├── audio/make_audio.py      sintetiza a trilha e os efeitos
 │   ├── icons/make-icons.mjs     desenha os ícones e a marca
 │   ├── measure/measure.mjs      mede as fontes → project/lib/metrics.json
-│   └── render/                  renderização headless com os pacotes do Diffusion Studio
+│   ├── render/                  renderização headless com os pacotes do Diffusion Studio
+│   └── review/glitch.py         acha quadros vazios ou piscadas de 1 quadro no vídeo final
 └── output/sketchware-ia-promo.mp4
 ```
 
@@ -74,7 +75,14 @@ node production/tools/measure/measure.mjs                                       
 (cd production/tools/render/harness && node $DS_EDITOR/node_modules/vite/bin/vite.js build --config vite.config.mjs)
 node production/tools/render/render.mjs                  # → production/output/sketchware-ia-promo.mp4
 node production/tools/render/render.mjs --from 21 --to 31 --out /tmp/trecho.mp4 --no-audio   # um trecho
+
+# 4. revisão: nenhum quadro vazio/piscada de 1 quadro (sai com 1 se achar algum)
+python3 production/tools/review/glitch.py production/output/sketchware-ia-promo.mp4
 ```
+
+Todo início e fim de elemento é alinhado ao quadro (1/30 s, `snap` em `lib/core.tsx`), e cada clipe
+da gravação termina pelo `end` da timeline, nunca pelo `sourceOut`. Assim, cortes consecutivos
+compartilham a mesma fronteira de quadro, mesmo em trechos acelerados ou em câmera lenta.
 
 As fontes (Inter, licença OFL) que o runtime pede ao Google Fonts são servidas de
 `production/tools/render/font-cache/`, então o render não depende da rede; se alguma fonte não

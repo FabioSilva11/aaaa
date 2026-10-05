@@ -80,6 +80,9 @@ export function Montage() {
       <Word text="Lógica." at={41.6} until={43.45} />
       <Word text="Desenvolvimento." at={43.6} until={45.2} />
       <G from={45.55} to={46.8}>
+        {/* soft dark band so the line stays legible over the light cards */}
+        <R x={360} y={465} w={1200} h={150} r={75} fill="#07060F" blur={48} opacity={0}
+          anim={{ opacity: [[45.55, 0, E.out], [46.0, 0.72], [46.4, 0.72, E.in], [46.75, 0]] }} />
         <T x={0} y={500} w={1920} h={80} align="center" baseline="middle" size={64} weight={700} color="#FFFFFF" spacing={-1}
           shadow={{ blur: 30, y: 8, opacity: 0.5 }} anim={rise(45.55, 20, 0.6, 46.4, 0.35)}>Design. Lógica. Desenvolvimento.</T>
       </G>
@@ -231,7 +234,8 @@ function BeatWord(p: { text: string; at: number; src: string; cropY: number; col
         <rect clipPath x={0} y={0} width={1920} height={1080} />
       </Box>
       <R x={0} y={0} w={1920} h={1080} fill="#07060F" opacity={0.55} />
-      <Box cx={960} cy={540} w={1920} h={240} anim={{ scale: [[t0, 1.15, E.out], [t0 + 0.3, 1]], opacity: [[t0, 0, E.out], [t0 + 0.08, 1], [t1 - 0.08, 1, E.in], [t1, p.last ? 0.9 : 0]] }}>
+      {/* the word cuts with its picture (no fade: on a hard cut a 2-frame fade reads as a flicker) */}
+      <Box cx={960} cy={540} w={1920} h={240} anim={{ scale: [[t0, 1.15, E.out], [t0 + 0.3, 1]] }}>
         <T x={0} y={0} w={1920} h={240} align="center" baseline="middle" size={170} weight={800} spacing={14} color={p.color ?? "#FFFFFF"}
           shadow={{ blur: 40, y: 10, opacity: 0.5 }}>{p.text}</T>
       </Box>

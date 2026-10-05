@@ -117,10 +117,13 @@ function def<T extends Record<string, unknown>>(o: T): Partial<T> {
 
 type Timed = { from?: number; to?: number; anim?: Anim };
 
+/** Snaps a time to the frame grid, so clips that meet at a cut share one frame boundary. */
+export const snap = (t: number) => Math.round(t * 30) / 30;
+
 function useSpan(p: Timed) {
   const base = useWindow();
-  const from = p.from ?? base.from;
-  const to = p.to ?? base.to;
+  const from = snap(p.from ?? base.from);
+  const to = snap(p.to ?? base.to);
   return { base, from, to, start: from - base.from, end: to - base.from };
 }
 

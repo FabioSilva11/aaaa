@@ -10,7 +10,7 @@
 // y < 1684 ("SCREEN_H"): a 864×1684 screen.
 
 import type { JSX } from "solid-js";
-import { Box, E, G, R, easeFn, lerp, type Anim, type Key } from "./core";
+import { Box, E, G, R, easeFn, lerp, snap, type Anim, type Key } from "./core";
 
 export const SRC = "assets/footage/screenrecord.vp9.webm";
 export const SRC_W = 864;
@@ -34,8 +34,10 @@ export function Footage(p: {
   /** a still (a whole 864×1920 recording frame) instead of the video */
   still?: string;
 }) {
+  // The clip is bounded by `end` (timeline time), not sourceOut: the runtime
+  // rounds sourceOut in source frames and divides by the rate, which can end
+  // a sped-up or slowed clip a frame early and flash an empty screen at the cut.
   const speed = p.speed ?? 1;
-  const sourceOut = p.sourceIn + (p.to - p.from) * speed;
   const k = p.k;
   if (p.still) {
     return (
@@ -54,8 +56,8 @@ export function Footage(p: {
         width={SRC_W * k}
         height={SRC_H * k}
         start={0}
+        end={snap(p.to) - snap(p.from)}
         sourceIn={p.sourceIn}
-        sourceOut={sourceOut}
         playbackRate={speed}
         objectFit="fill"
         muted
@@ -218,27 +220,29 @@ export function AnimWindow(p: {
   from: number; to: number; geo: Geo[]; segs: Seg[]; r?: number; anim?: Anim; blur?: number | Key[];
   shadow?: boolean; border?: boolean; children?: JSX.Element;
 }) {
+  const from = snap(p.from), to = snap(p.to);
+  const segs = p.segs.map((s) => ({ ...s, from: snap(s.from), to: snap(s.to) }));
   const r = p.r ?? 28;
   const rect = (t: number) => {
     const g = geoAt(p.geo, t);
     const W = g.w * g.k, H = g.h * g.k;
     return { left: g.cx - W / 2, top: g.cy - H / 2, W, H, g };
   };
-  const card = sampleTimes(p.geo, p.from, p.to);
+  const card = sampleTimes(p.geo, from, to);
   const keysOf = (times: number[], f: (t: number) => number): [number, number][] => times.map((t) => [t, f(t)]);
   return (
-    <G from={p.from} to={p.to} anim={p.anim} blur={p.blur}>
+    <G from={from} to={to} anim={p.anim} blur={p.blur}>
       <G anim={{ opacity: keysOf(card, (t) => rect(t).g.op).map(([t, v]) => [t, v] as Key) }}>
         {p.shadow !== false ? (
-          <rect x={0} y={0} width={10} height={10} cornerRadius={r} fill="#F8F9FB" start={0} end={p.to - p.from}>
+          <rect x={0} y={0} width={10} height={10} cornerRadius={r} fill="#F8F9FB" start={0} end={to - from}>
             <shadow color="#000000" blur={70} offsetY={34} opacity={0.5} />
-            <Track property="x" keys={keysOf(card, (t) => rect(t).left)} start={p.from} />
-            <Track property="y" keys={keysOf(card, (t) => rect(t).top)} start={p.from} />
-            <Track property="width" keys={keysOf(card, (t) => rect(t).W)} start={p.from} />
-            <Track property="height" keys={keysOf(card, (t) => rect(t).H)} start={p.from} />
+            <Track property="x" keys={keysOf(card, (t) => rect(t).left)} start={from} />
+            <Track property="y" keys={keysOf(card, (t) => rect(t).top)} start={from} />
+            <Track property="width" keys={keysOf(card, (t) => rect(t).W)} start={from} />
+            <Track property="height" keys={keysOf(card, (t) => rect(t).H)} start={from} />
           </rect>
         ) : null}
-        {p.segs.map((s) => {
+        {segs.map((s) => {
           const times = sampleTimes(p.geo, s.from, s.to);
           const speed = s.speed ?? 1;
           return (
@@ -252,7 +256,7 @@ export function AnimWindow(p: {
                 </image>
               ) : (
                 <video src={SRC} x={0} y={0} width={SRC_W} height={SRC_H} objectFit="fill" muted start={0}
-                  sourceIn={s.sourceIn!} sourceOut={s.sourceIn! + (s.to - s.from) * speed} playbackRate={speed}>
+                  end={s.to - s.from} sourceIn={s.sourceIn!} playbackRate={speed}>
                   <Track property="x" keys={keysOf(times, (t) => rect(t).left - rect(t).g.x * rect(t).g.k)} start={s.from} sourceIn={s.sourceIn} rate={speed} />
                   <Track property="y" keys={keysOf(times, (t) => rect(t).top - rect(t).g.y * rect(t).g.k)} start={s.from} sourceIn={s.sourceIn} rate={speed} />
                   <Track property="width" keys={keysOf(times, (t) => SRC_W * rect(t).g.k)} start={s.from} sourceIn={s.sourceIn} rate={speed} />
@@ -269,12 +273,12 @@ export function AnimWindow(p: {
           );
         })}
         {p.border !== false ? (
-          <rect x={0} y={0} width={10} height={10} cornerRadius={r} start={0} end={p.to - p.from}>
+          <rect x={0} y={0} width={10} height={10} cornerRadius={r} start={0} end={to - from}>
             <stroke color="#FFFFFF" width={3} opacity={0.22} />
-            <Track property="x" keys={keysOf(card, (t) => rect(t).left)} start={p.from} />
-            <Track property="y" keys={keysOf(card, (t) => rect(t).top)} start={p.from} />
-            <Track property="width" keys={keysOf(card, (t) => rect(t).W)} start={p.from} />
-            <Track property="height" keys={keysOf(card, (t) => rect(t).H)} start={p.from} />
+            <Track property="x" keys={keysOf(card, (t) => rect(t).left)} start={from} />
+            <Track property="y" keys={keysOf(card, (t) => rect(t).top)} start={from} />
+            <Track property="width" keys={keysOf(card, (t) => rect(t).W)} start={from} />
+            <Track property="height" keys={keysOf(card, (t) => rect(t).H)} start={from} />
           </rect>
         ) : null}
         {p.children}

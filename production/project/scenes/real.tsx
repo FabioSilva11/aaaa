@@ -252,7 +252,7 @@ export const LW_GEO: Geo[] = [
 ];
 
 const LW_SEGS: Seg[] = [
-  { from: 22.45, to: 23.0, sourceIn: 40.95 },
+  { from: 22.4, to: 23.0, sourceIn: 40.9 }, // opens 2 frames early: overlaps the phone's fade, never a gap
   { from: 23.0, to: 23.25, sourceIn: 42.2 },
   { from: 23.25, to: 23.4, sourceIn: 44.4 },
   { from: 23.4, to: 23.7, sourceIn: 45.62 },
@@ -285,7 +285,7 @@ export function LogicWindow() {
   // the slot while parked
   const [bx0, by0] = pt(36, SLOT.x0, SLOT.y0), [bx1, by1] = pt(36, SLOT.x1, SLOT.y1);
   return (
-    <AnimWindow from={22.45} to={38.95} geo={LW_GEO} segs={LW_SEGS}
+    <AnimWindow from={22.4} to={38.95} geo={LW_GEO} segs={LW_SEGS}
       blur={[[22.45, 8, E.out], [22.7, 0]]}
       anim={{ offsetX: [[38.55, 0, E.in], [38.95, -900]], opacity: [[38.55, 1, E.in], [38.95, 0]] }}>
       <R x={hx0} y={hy0} w={hx1 - hx0} h={hy1 - hy0} r={14} fill="#6B5CE7" opacity={0} from={26.15} to={26.55}
