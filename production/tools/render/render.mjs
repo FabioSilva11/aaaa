@@ -163,7 +163,7 @@ const { execFileSync } = await import("node:child_process");
 execFileSync("ffmpeg", [
   "-y", "-hide_banner", "-loglevel", "error", "-i", master,
   "-c:v", "libx264", "-preset", "medium", "-crf", "16", "-profile:v", "high", "-pix_fmt", "yuv420p",
-  "-r", String(options.fps), "-c:a", "aac", "-b:a", "256k", "-ar", "48000", "-movflags", "+faststart",
+  "-r", String(options.fps), "-af", "alimiter=limit=0.89:attack=3:release=50:level=disabled", "-c:a", "aac", "-b:a", "256k", "-ar", "48000", "-movflags", "+faststart",
   ...(options.audio ? [] : ["-an"]),
   out,
 ], { stdio: "inherit" });

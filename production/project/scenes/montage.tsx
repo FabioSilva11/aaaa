@@ -48,7 +48,7 @@ export function Montage() {
           return <R x={x} y={y} w={260 * s} h={520 * s} r={40 * s} fill="#FFFFFF" opacity={0.05} stroke={{ color: "#FFFFFF", width: 2, opacity: 0.12 }} rotation={i % 2 ? 6 : -5} />;
         })}
       </G>
-      <G anim={{ opacity: [[M0, 0, E.out], [M0 + 0.35, 1]] }}>
+      <G anim={{ opacity: [[M0, 0, E.out], [M0 + 0.35, 1], [46.85, 1, E.inOut], [47.1, 0]] }}>
         <Camera from={M0} to={M1 + 0.1} shots={shots}>
           <Card cx={420} cy={560} s={0.34} r={-4}><HomeScreen from={M0} to={M1} /></Card>
           <Card cx={900} cy={500} s={0.34} r={3}><NewProjectScreen from={M0} to={M1} open={-100} type={-100} create={-100} /></Card>
@@ -93,7 +93,7 @@ function Word(p: { text: string; at: number; until: number; size?: number; spaci
 export const RES = { focus: 48.75, type: 48.95, press: 49.75, result: 49.9 };
 
 export function Result() {
-  const t0 = M1 - 0.05;
+  const t0 = 46.7;
   // the editor card left by the montage, preview at its centre-right
   const cardS = 0.42;
   const pvCenter = { x: 960 + (d(PV.x + PV.w / 2) - SW / 2) * cardS, y: 540 + (d(PV.y + PV.h / 2) - SH / 2) * cardS };
@@ -106,7 +106,7 @@ export function Result() {
     <G from={t0} to={54.15}>
       <Box cx={960} cy={540} w={SW} h={SH} scale={cardS} from={t0} to={48.8}
         blur={[[grow, 0, E.inOut], [grow + 0.9, 12]]}
-        anim={{ scale: [[grow, cardS, E.inOut], [grow + 0.9, 0.34]], opacity: [[grow + 0.2, 1, E.inOut], [48.7, 0]] }}>
+        anim={{ scale: [[grow, cardS, E.inOut], [grow + 0.9, 0.34]], opacity: [[t0, 0, E.inOut], [46.95, 1], [grow + 0.2, 1, E.inOut], [48.7, 0]] }}>
         <R x={0} y={0} w={SW} h={SH} r={90} fill={C.surface} shadow={{ blur: 120, y: 60, opacity: 0.55 }} />
         <G>
           <EditorScreen from={t0} to={48.8} />

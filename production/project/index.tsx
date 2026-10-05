@@ -100,7 +100,7 @@ export default function Project() {
         <Caption step="03" label="LÓGICA" lines={["Crie a lógica", "visualmente"]} from={22.7} to={30.4} />
         <Caption step="04" label="TESTE" lines={["Seu app,", "ganha vida."]} from={33.3} to={38.4} />
         <Caption step="05" label="RESULTADO" lines={["Projeto criado,", "app funcionando."]} from={48.25} to={51.3} />
-        <audio src="assets/audio/music/sketchware-ia-theme.wav" start={0} volume={-4.5} />
+        <audio src="assets/audio/music/sketchware-ia-theme.wav" start={0} volume={-3.5} />
         <SoundDesign />
       </scene>
     </stage>

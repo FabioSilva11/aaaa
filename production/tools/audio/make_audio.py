@@ -170,6 +170,20 @@ def pad(freqs, length, level=1.0, cutoff=2200):
     return s * e * level
 
 
+def pad_hit(freqs, length, level=1.0, cutoff=2600):
+    """A struck chord: instant attack, slow exponential decay, closing filter."""
+    t = t_axis(length)
+    s = np.zeros(len(t))
+    for f in freqs:
+        for d in (-0.12, 0.0, 0.12):
+            s += saw(f * 2 ** (d / 12), t, rng.random())
+    s /= len(freqs) * 3
+    bright, dark = lp(s, cutoff), lp(s, cutoff * 0.3)
+    k = np.exp(-t * 0.9)
+    e = np.minimum(1, t / 0.01) * np.exp(-t * 0.55)
+    return (bright * k + dark * (1 - k)) * e * level
+
+
 def bass_note(freq, length, level=1.0):
     t = t_axis(length)
     s = np.sign(np.sin(2 * np.pi * freq * t)) * 0.35 + saw(freq, t) * 0.4 + np.sin(2 * np.pi * freq * t) * 0.7
@@ -209,7 +223,7 @@ def build_music():
             break
 
         # pads all the way (swelling in the intro)
-        lvl = 0.6 if t0 < 5 else 0.5
+        lvl = 0.85 if t0 < 5 else 0.5
         add(pads, pan(pad([midi(x) for x in notes], BAR + 1.0, lvl, 1800 if t0 < 5 else 2600), 0), t0)
 
         # arpeggio: 16ths over chord tones, cutoff opening with the story
@@ -220,7 +234,7 @@ def build_music():
             seq = [0, 1, 2, 3, 2, 1, 3, 2]
             note = notes[seq[i % 8]] + 12
             if ts < 5:
-                cut, lv = 900 + ts * 250, 0.18
+                cut, lv = 900 + ts * 250, 0.24
             elif ts < 21:
                 cut, lv = 1600 + (ts - 5) * 70, 0.22
             elif ts < 39:
@@ -248,7 +262,7 @@ def build_music():
                 if tb >= 39.0 and b == 3:
                     add(drums, pan(hat(True, 0.12), 0.3), tb + BEAT / 2)
                 # bass: 8ths on the root, ducked on the beat
-                if not (31.0 <= tb < 32.0):
+                if not (31.0 <= tb < 31.5):
                     for e8 in range(2):
                         lv = 0.42 if e8 else 0.28
                         f = midi(root - 12 + (12 if (e8 and b == 3) else 0))
@@ -261,9 +275,11 @@ def build_music():
     for b in range(8):
         add(drums, kick(0.3 + b * 0.04), 50.0 + b * BEAT)
 
-    # final chord at 54: big pad + low C, long tail
-    add(pads, pan(pad([midi(x) for x in [48, 55, 60, 64, 67, 72]], 6.0, 0.9, 3000), 0), 54.0)
-    add(bass, bass_note(midi(36), 3.0, 0.6), 54.0)
+    # final chord at 54: struck, then left to ring out to the end
+    add(pads, pan(pad_hit([midi(x) for x in [48, 55, 60, 64, 67, 72]], 6.0, 0.95, 3200), 0), 54.0)
+    t_tail = t_axis(6.0)
+    sub = np.sin(2 * np.pi * midi(36) * t_tail) * np.exp(-t_tail * 0.75) * 0.55
+    add(bass, lp(sub, 300), 54.0)
     for i, note in enumerate([72, 76, 79, 84]):
         add(keys, pan(pluck(midi(note), 1.2, 5000, 0.25), (-0.4, 0.4, -0.2, 0.2)[i]), 54.0 + i * BEAT / 4)
 

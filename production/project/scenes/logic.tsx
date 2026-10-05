@@ -6,7 +6,7 @@
 // to the blocks that answer it.
 
 import { E, clamp, easeFn, lerp } from "../lib/core";
-import { LogicPanel, PANEL, ProgramCard, type LogicTimes } from "../screens/logic";
+import { LogicPanel, PANEL, ProgramCard, buildProgram, type LogicTimes } from "../screens/logic";
 import { APPT } from "./phone";
 
 export const LG: LogicTimes = {
@@ -29,12 +29,28 @@ export const LG: LogicTimes = {
 
 const ioc = easeFn(E.inOut);
 
-/** Canvas camera: starts close on the hat, eases out as the stack grows. */
+// Program bounds (canvas coords) → framing. Close on the hat and the if-bar
+// while the condition is built, then ease out to frame the whole program,
+// centred, before the wide setText block arrives.
+const PROG = buildProgram();
+const CW = PANEL.w - PANEL.paletteW, CH = PANEL.h - PANEL.bar;
+const R0 = Math.max(...PROG.filter((p) => ["hat", "if", "gt", "len", "get1"].includes(p.id)).map((p) => (p.c ? p.x + p.c.topW : p.x + p.w)));
+const R1 = Math.max(...PROG.map((p) => p.x + p.w));
+const B1 = Math.max(...PROG.map((p) => p.y + p.h));
+const L = 48, TOP = 44, M = 46;
+const S0 = Math.min(1.6, (CW - 2 * M) / (R0 - L));
+const S1 = Math.min(1.35, (CW - 2 * M) / (R1 - L), (CH - 2 * M) / (B1 - TOP));
+const OX0 = M - S0 * L, OY0 = M - S0 * TOP;
+const OX1 = (CW - S1 * (R1 - L)) / 2 - S1 * L, OY1 = (CH - S1 * (B1 - TOP)) / 2 - S1 * TOP;
+
 function canvasCam(t: number) {
-  const k = ioc(clamp((t - 22.6) / (27.4 - 22.6)));
+  const k = ioc(clamp((t - 26.1) / (27.0 - 26.1)));
   const k2 = ioc(clamp((t - 29.8) / 1.0));
-  const s = lerp(1.22, 0.98, k) + 0.04 * k2;
-  return { s, ox: lerp(10, 18, k) - 20 * k2, oy: lerp(18, 34, k) - 8 * k2 };
+  const s = lerp(S0, S1, k) * (1 + 0.035 * k2);
+  // keep the zoom-in of the flow centred on the program
+  const cx = (L + R1) / 2, cy = (TOP + B1) / 2;
+  const ox = lerp(OX0, OX1, k), oy = lerp(OY0, OY1, k);
+  return { s, ox: ox - (s - lerp(S0, S1, k)) * cx, oy: oy - (s - lerp(S0, S1, k)) * cy };
 }
 
 export function LogicScene() {
@@ -59,7 +75,7 @@ export function ConnectCard() {
   const from = 34.45;
   const to = 39.2;
   return (
-    <ProgramCard x={600} y={360} scale={0.52} from={from} to={to} run={APPT.press + 0.06}
+    <ProgramCard x={548} y={332} scale={0.74} from={from} to={to} run={APPT.press + 0.06}
       anim={{
         offsetX: [[from, -140, E.out], [from + 0.7, 0], [38.6, 0, E.in], [39.15, -900]],
         opacity: [[from, 0, E.out], [from + 0.45, 1], [38.7, 1, E.in], [39.1, 0]],

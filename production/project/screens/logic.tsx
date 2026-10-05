@@ -455,7 +455,8 @@ export function ProgramCard(p: { x: number; y: number; scale: number; from: numb
   const pieces = buildProgram();
   const run = p.run ?? 1000;
   const order: Record<string, number> = { hat: 0, if: 0.12, gt: 0.2, set: 0.34, join: 0.4 };
-  const W = 1000, H = 470;
+  const W = Math.max(...pieces.map((pc) => pc.x + pc.w)) + 40;
+  const H = Math.max(...pieces.map((pc) => pc.y + pc.h)) + 36;
   return (
     <Box cx={p.x + (W * p.scale) / 2} cy={p.y + (H * p.scale) / 2} w={W} h={H} from={p.from} to={p.to} scale={p.scale} anim={p.anim}>
       <R x={0} y={0} w={W} h={H} r={40} fill="#F4F4F8" opacity={0.97} shadow={{ blur: 60, y: 30, opacity: 0.45 }} />
