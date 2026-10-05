@@ -6,37 +6,43 @@ produzido com o **[Diffusion Studio](https://github.com/diffusionstudio/editor)*
 - **Vídeo final:** [`production/output/sketchware-ia-promo.mp4`](production/output/sketchware-ia-promo.mp4)
 - **Roteiro, timeline e decisões:** [`production/ROTEIRO.md`](production/ROTEIRO.md)
 
+As telas do app vêm da **gravação de tela real** do Sketchware IA e das capturas enviadas pelo
+usuário: recortadas, ampliadas, aceleradas e montadas no ritmo da música, sem o anúncio de teste.
+Só o app rodando foi recriado, porque a gravação termina quando o APK fica pronto.
+
 ## Estrutura
 
 ```
 production/
-├── ROTEIRO.md                 roteiro, timeline cena a cena, identidade, áudio
-├── project/                   o projeto do Diffusion Studio (editável)
-│   ├── index.tsx              entrada da composição: cenas, legendas, trilha e sound design
-│   ├── package.json           registro do projeto + configuração de exportação (diffusion.export.promo)
+├── ROTEIRO.md                   roteiro, timeline cena a cena, material, áudio
+├── footage/
+│   ├── sketchware-ia-screenrecord.mp4   gravação de tela original (864x1920, 142 s)
+│   ├── footage-log.json         log quadro a quadro: eventos, recortes, geometria da UI, regra do anúncio
+│   └── edit-plan.json           EDL final (painel de 3 diretores + juiz), pontos de origem verificados
+├── project/                     o projeto do Diffusion Studio (editável)
+│   ├── index.tsx                entrada: cenas, legendas, trilha e sound design
+│   ├── package.json             registro do projeto + exportação (diffusion.export.promo)
 │   ├── lib/
-│   │   ├── core.tsx           linguagem de movimento: wrappers com tempo absoluto, curvas, câmera, métricas de texto
-│   │   ├── ui.tsx             cores do tema do app, aparelho, barra de status, toque, digitação
-│   │   └── metrics.json       larguras dos glifos (Inter), para posicionamento exato
-│   ├── screens/               telas do Sketchware IA recriadas a partir dos layouts do app
-│   │   ├── start.tsx          Projects e New Project
-│   │   ├── editor.tsx         editor: abas, paleta, pré-visualização, propriedades, Event, Run
-│   │   ├── logic.tsx          editor de lógica e o sistema de blocos (layout + encaixe)
-│   │   └── app.tsx            o "Olá App" em execução
-│   ├── scenes/                as cenas do filme
-│   │   ├── brand.tsx          01 abertura, 08 encerramento, fundo, legendas
-│   │   ├── phone.tsx          02 projeto, 03 design, 04 (início), 05 teste — plano contínuo do celular
-│   │   ├── logic.tsx          04 eventos e blocos; cartão do programa da cena 05
-│   │   └── montage.tsx        06 visão geral da plataforma, 07 resultado
+│   │   ├── core.tsx             wrappers com tempo absoluto, curvas, câmera, métricas de texto
+│   │   ├── footage.tsx          gravação como material: recortes, AnimWindow, RealPhone
+│   │   ├── ui.tsx               cores e componentes de apoio da abertura
+│   │   └── metrics.json         larguras dos glifos (Inter)
+│   ├── scenes/
+│   │   ├── brand.tsx            01 abertura, 08 encerramento, fundo, legendas
+│   │   ├── real.tsx             02–05: projeto, design, eventos e blocos, build e app rodando
+│   │   └── montage.tsx          06 visão geral, 07 resultado
+│   ├── screens/realapp.tsx      o app "NewProject" rodando (recriado: tema #6176AD, "Olá mundo")
 │   └── assets/
-│       ├── brand/             marca (desenho original)
-│       ├── icons/             ícones (desenho original, 5 tons)
-│       └── audio/             trilha e efeitos (sintetizados)
+│       ├── footage/             proxy VP9 30 fps da gravação (decodificável headless)
+│       ├── screens/             capturas do usuário (+ New Project sem anúncio)
+│       ├── stills/              quadros da gravação usados como pausas e cartões
+│       ├── brand/, icons/       marca e ícones (desenho original)
+│       └── audio/               trilha e efeitos (sintetizados)
 ├── tools/
-│   ├── audio/make_audio.py    sintetiza a trilha e os efeitos
-│   ├── icons/make-icons.mjs   desenha os ícones e a marca
-│   ├── measure/measure.mjs    mede as fontes → project/lib/metrics.json
-│   └── render/                renderização headless com os pacotes do Diffusion Studio
+│   ├── audio/make_audio.py      sintetiza a trilha e os efeitos
+│   ├── icons/make-icons.mjs     desenha os ícones e a marca
+│   ├── measure/measure.mjs      mede as fontes → project/lib/metrics.json
+│   └── render/                  renderização headless com os pacotes do Diffusion Studio
 └── output/sketchware-ia-promo.mp4
 ```
 

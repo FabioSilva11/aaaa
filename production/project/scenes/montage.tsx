@@ -112,6 +112,9 @@ const PREVIEW = { x: 280, y: 352, w: 558, h: 1212 }; // design preview in source
 const TV = { x: 559, y: 1044 }; // the grey "TextView" in the preview, source px
 const PHONE_C = { x: 1200, y: 540 };
 const PHONE_S = 0.58;
+// push-in while the app works: larger, and lowered so the toolbar stays in frame
+const END_S = 0.8;
+const END_CY = 36 + ((SCREEN_H + 44) / 2) * END_S;
 
 export const RES = { morph: 47.35, settle: 48.3, exit: 51.3 };
 
@@ -168,8 +171,8 @@ export function Result() {
       <RealPhone cx={PHONE_C.x} cy={PHONE_C.y} from={47.95} to={51.6}
         anim={{
           opacity: [[47.95, 0, E.out], [48.3, 1], [RES.exit, 1, E.in], [51.5, 0]],
-          scale: [[47.95, PHONE_S], [48.3, PHONE_S, E.inOut], [50.8, 0.72], [RES.exit, 0.72, E.in], [51.5, 0.612]],
-          cy: [[48.3, 540, E.inOut], [50.8, 599]],
+          scale: [[47.95, PHONE_S], [48.3, PHONE_S, E.inOut], [50.8, END_S], [RES.exit, END_S, E.in], [51.5, END_S * 0.85]],
+          cy: [[48.3, 540, E.inOut], [50.8, END_CY]],
         }}
         blur={[[RES.exit, 0, E.in], [51.5, 16]]}>
         <RealApp from={47.95} to={51.6} bump={[48.6, 50.0]} />
@@ -194,8 +197,8 @@ function Rings() {
     // phone scale/centre at t (matches the RealPhone keys above)
     const k = t <= 48.3 ? 0 : t >= 50.8 ? 1 : (t - 48.3) / 2.5;
     const e = k < 0.5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2;
-    const s = PHONE_S + (0.72 - PHONE_S) * e;
-    const cy = 540 + (599 - 540) * e;
+    const s = PHONE_S + (END_S - PHONE_S) * e;
+    const cy = 540 + (END_CY - 540) * e;
     return { x: PHONE_C.x, y: cy + (APP_TEXT.y - SCREEN_H / 2) * s, s };
   };
   // card slot: crop {10,262,392,118} at k 1.4, top-left (136,690); slot source x290–386, y333–361
