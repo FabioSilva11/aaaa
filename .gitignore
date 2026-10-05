@@ -3,3 +3,9 @@ production/tools/render/harness/dist/
 production/output/*.master.webm
 production/project/cache/
 *.log
+# analysis frames extracted from the screen recording (regenerable)
+production/footage/frames1s/
+production/footage/frames5/
+production/footage/sheets/
+production/footage/sheets5/
+production/footage/full/

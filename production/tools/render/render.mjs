@@ -15,7 +15,7 @@ import { createRequire } from "node:module";
 import { compileProject } from "./compile.mjs";
 
 const here = dirname(fileURLToPath(import.meta.url));
-const PROJECT = resolve(here, "../../project");
+
 const DIST = join(here, "harness/dist");
 
 const args = process.argv.slice(2);
@@ -24,6 +24,7 @@ const arg = (name, fallback) => {
   return i >= 0 ? args[i + 1] : fallback;
 };
 const out = resolve(arg("out", join(here, "../../output/sketchware-ia-promo.mp4")));
+const PROJECT = resolve(arg("project", join(here, "../../project")));
 const options = {
   fps: Number(arg("fps", 30)),
   from: arg("from") !== undefined ? Number(arg("from")) : undefined,
