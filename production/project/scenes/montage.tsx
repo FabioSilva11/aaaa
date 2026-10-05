@@ -34,8 +34,8 @@ export const LAST_CARD = { x: 3850, y: 560, s: 0.36 };
 export function Montage() {
   const shots = [
     { t: M0, x: -200, y: 560, s: 0.72, r: -3 },
-    { t: 46.05, x: 3420, y: 540, s: 0.8, r: 2, ease: "cubicBezier(0.4,0,0.6,1)" },
-    { t: M1, x: LAST_CARD.x, y: LAST_CARD.y, s: 0.42 / LAST_CARD.s, r: 0, ease: E.inOut },
+    { t: 45.75, x: 3420, y: 540, s: 0.8, r: 2, ease: "cubicBezier(0.4,0,0.6,1)" },
+    { t: 46.65, x: LAST_CARD.x, y: LAST_CARD.y, s: 0.42 / LAST_CARD.s, r: 0, ease: E.inOut },
   ];
   return (
     <G from={M0} to={M1 + 0.1}>

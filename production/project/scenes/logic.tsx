@@ -75,7 +75,7 @@ export function ConnectCard() {
   const from = 34.45;
   const to = 39.2;
   return (
-    <ProgramCard x={548} y={332} scale={0.74} from={from} to={to} run={APPT.press + 0.06}
+    <ProgramCard x={546} y={352} scale={0.88} from={from} to={to} run={APPT.press + 0.06}
       anim={{
         offsetX: [[from, -140, E.out], [from + 0.7, 0], [38.6, 0, E.in], [39.15, -900]],
         opacity: [[from, 0, E.out], [from + 0.45, 1], [38.7, 1, E.in], [39.1, 0]],
